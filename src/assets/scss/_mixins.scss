@@ -1,0 +1,186 @@
+$white: #ffffff;
+$bg: #010002;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 600px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    xxl: 1440px
+);
+
+$grid-columns: 12;
+
+$grid-gutter-width: (
+    xs: 40px,
+    sm: 40px,
+    md: 40px,
+    lg: 80px,
+    xl: 100px,
+    xxl: 140px
+);
+
+$grid-gutter-cell: (
+    xs: 20px,
+    sm: 20px,
+    md: 20px,
+    lg: 20px,
+    xl: 20px,
+    xxl: 20px
+);
+
+
+$margi-row: 72px;
+
+@use 'sass:math';
+
+@function grid-width($n) {
+    @return math.div($n, $grid-columns) * 100%;
+}
+
+@function gutter-width($breakpoint) {
+    $gutter-width: map-get($grid-gutter-width, $breakpoint);
+    @return math.div($gutter-width, 2);
+}
+
+@function gutter-width-cell($breakpoint) {
+    $gutter-width-cell: map-get($grid-gutter-cell, $breakpoint);
+    @return math.div($gutter-width-cell, 2);
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: gutter-width(xs);
+  padding-right: gutter-width(xs);
+  width: 100%;
+
+
+  @each $breakpoint, $size in $grid-breakpoints {
+    @if $size != 0 {
+      @media (min-width: $size) {
+        //max-width: $size - map-get($grid-gutter-width, xs) - $margi-row;
+        max-width: $size;
+        padding-left: gutter-width(#{$breakpoint});
+        padding-right: gutter-width(#{$breakpoint});
+      }
+    } @else {
+      max-width: 100%;
+    }
+  }
+}
+
+.row {
+    margin-left: - gutter-width-cell(xs);
+    margin-right: - gutter-width-cell(xs);
+    display: flex;
+    flex-wrap: wrap;
+
+    @each $breakpoint, $size in $grid-breakpoints {
+        @media (min-width: $size) {
+            margin-left: - gutter-width-cell(#{$breakpoint});
+            margin-right: - gutter-width-cell(#{$breakpoint});
+        }
+    }
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-left: gutter-width-cell(xs);
+    padding-right: gutter-width-cell(xs);
+
+    @each $breakpoint, $size in $grid-breakpoints {
+        @media (min-width: $size) {
+            padding-left: gutter-width-cell(#{$breakpoint});
+            padding-right: gutter-width-cell(#{$breakpoint});
+        }
+    }
+}
+  
+@each $breakpoint, $size in $grid-breakpoints {
+    @if $size != 0 {
+        @media (min-width: $size) {
+            @for $i from 0 through $grid-columns {
+                .col-#{$breakpoint}-#{$i} {
+                    flex: 0 0 auto;
+                    width: grid-width($i);
+                    @if $i == 0 {
+                        padding: 0 !important;
+                        display: none;
+                    } @else {
+                        //padding: inherit;
+                    }
+                }
+            }
+            @for $j from 1 through $grid-columns {
+                .col-#{$breakpoint}-offset-#{$j} {
+                    margin-left: grid-width($j);
+                }
+            }
+        }
+    } @else {
+        @for $i from 0 through $grid-columns {
+            .col-#{$i} {
+                flex: 0 0 auto;
+                width: grid-width($i);
+            }
+        }
+        @for $j from 1 through $grid-columns {
+            .col-offset-#{$j} {
+                margin-left: grid-width($j);
+            }
+        }
+    }
+}
+
+@mixin sm {
+    @media (min-width: map-get($grid-breakpoints, sm)) {
+        @content;
+    }
+ }
+ 
+ @mixin md {
+    @media (min-width: map-get($grid-breakpoints, md)) {
+        @content;
+    }
+ }
+ 
+ @mixin lg {
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+        @content;
+    }
+ }
+ 
+ @mixin xl {
+    @media (min-width: map-get($grid-breakpoints, xl)) {
+        @content;
+    }
+ }
+
+ @mixin xxl {
+    @media (min-width: map-get($grid-breakpoints, xxl)) {
+        @content;
+    }
+ }
+
+@mixin rwd-max($screen) {
+    @media (max-width: $screen) {
+        @content;
+    }
+}
+
+@mixin rwd-min($screen) {
+    @media (min-width: $screen) {
+        @content;
+    }
+}
+
+@mixin position-absolute($x: 50%, $y: 50%, $tx: -50%, $ty: -50%) {
+    position: absolute;
+    left: $x;
+    top: $y;
+    transform: translate($tx, $ty);
+}

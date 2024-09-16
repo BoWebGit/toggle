@@ -1,0 +1,137 @@
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollable-element {
+    scrollbar-width: none;
+}
+
+.scrollable-element {
+    -ms-overflow-style: none;
+}
+
+html, body {
+    max-width: 100vw;
+}
+
+body {
+    background-color: $bg;
+    font-family: 'Clash Display';
+    color: $white;
+    font-size: 14px;
+    line-height: 17px;
+    font-style: normal;
+    //overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 32px;
+    box-sizing: border-box;
+    font-weight: 600;
+    line-height: 100%;
+    @include md {
+        line-height: 140%;
+        font-size: 64px;
+    }
+}
+
+.stars {
+    position: fixed !important;
+    top: 0;
+    z-index: 2;
+    background: url('../images/stars.svg'); 
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: block;
+}
+
+.pattern {
+    position: fixed !important;
+    top: 0;
+    z-index: 2;
+    background: url('../images/pattern.png'); 
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    opacity: 0.3;
+    display: block;
+}
+
+.sections-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 8px;
+    gap: 6px;
+    position: fixed;
+    z-index: 100;
+    width: 19px;
+    height: 124px;
+    right: 70px;
+    bottom: 80px;
+    background: radial-gradient(50% 62.22% at 50% 50%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border-radius: 57px;
+    @include rwd-max(map-get($grid-breakpoints, sm)){
+        right: auto;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-90deg);
+    }
+    .section-progress {
+        width: 3px;
+        height: 8px;
+        background: #ffffff16;
+        border-radius: 32px;
+        position: relative;
+        .title {
+            position: absolute;
+            display: none;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 10px;
+            line-height: 12px;
+            color: #FFFFFF;
+            right: calc(100% + 16px);
+        }
+        &.active {
+            height: 44px;
+            .title {
+                display: block;
+                @include rwd-max(map-get($grid-breakpoints, sm)){
+                    display: none;
+                }
+            }
+        }
+        .progress-percent {
+            width: 3px;
+            background: #fff;
+            border-radius: 32px;
+        }
+    }
+
+}

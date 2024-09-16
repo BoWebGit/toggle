@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+
+# Webpack output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# SASS cache
+.sass-cache/
+
+# IDE-specific files (optional, якщо використовуєте ці редактори)
+.vscode/
+.idea/
