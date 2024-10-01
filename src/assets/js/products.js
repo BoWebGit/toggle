@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.fromTo("#products .products_step-one", {
+gsap.fromTo("#products .products_step-one p", {
     opacity: 0,
     scale: 0,
   }, {
@@ -17,14 +17,29 @@ gsap.fromTo("#products .products_step-one", {
     }
 });
 
+gsap.fromTo("#products .sun_flare img", {
+  y: "150%",
+}, {
+  y: "0",
+  scrollTrigger: {
+    trigger: "#products",
+    start: "top -80%",
+    end: "top -150%",
+    scrub: true,
+  }
+});
+
 gsap.fromTo("#products .products__galaxy", {
     opacity: 1,
     scale: 1.8,
     top: "250%",
+    left: "50%",
+    x: "-50%",
+    y: "-50%",
   }, {
     opacity: 1,
     scale: 1.8,
-    top: "135%",
+    top: "142%",
     scrollTrigger: {
       trigger: "#products",
       start: "top -80%",
@@ -75,12 +90,15 @@ gsap.fromTo("#products .products_step-one p > span:nth-child(2)", {
 gsap.fromTo("#products .products_step-one p > span:nth-child(1)", {
   opacity: 1,
   scale: 1,
+  background: "linear-gradient(180deg, #FFFFFF -23.98%, #FFFFFF 96.99%) text",
 }, {
   opacity: .46,
   scale: 2.2,
+  background: "linear-gradient(180deg, #FFFFFF -23.98%, rgba(255, 255, 255, 0.3) 96.99%) text",
+  "-webkit-text-stroke": "0.5px rgba(255, 255, 255, 0.2)",
   scrollTrigger: {
     trigger: "#products",
-    start: "top -240%",
+    start: "top -200%",
     end: "top -300%",
     scrub: true,
   },
@@ -90,7 +108,7 @@ gsap.fromTo("#products .products_step-one p > span:nth-child(1)", {
 gsap.fromTo("#products .products_step-two .products__screens", {
   opacity: 0,
   scale: .7,
-  y: "150%",
+  y: "220%",
 }, {
   opacity: .46,
   scale: .7,
@@ -103,6 +121,19 @@ gsap.fromTo("#products .products_step-two .products__screens", {
   }
 });
 
+gsap.fromTo("#products .screens", {
+  zIndex: 0
+}, {
+  zIndex: 5,
+  scrollTrigger: {
+    trigger: "#products",
+    start: "top -220%",
+    end: "top -220%",
+    scrub: true,
+  },
+  immediateRender: false
+});
+
 gsap.fromTo("#products .products_step-two .products__screens", {
   opacity: .46,
   scale: .7,
@@ -113,14 +144,14 @@ gsap.fromTo("#products .products_step-two .products__screens", {
   y: "0%",
   scrollTrigger: {
     trigger: "#products",
-    start: "top -240%",
+    start: "top -200%",
     end: "top -300%",
     scrub: true,
   },
   immediateRender: false
 });
 
-gsap.fromTo("#products .products_step-two .products__screens .products__screen:nth-child(1) img", {
+gsap.fromTo("#products .products_step-two .products__screens .products__screen:nth-child(1) picture", {
   x: "0",
 }, {
   x: "-100%",
@@ -132,7 +163,7 @@ gsap.fromTo("#products .products_step-two .products__screens .products__screen:n
   }
 });
 
-gsap.fromTo("#products .products_step-two .products__screens .products__screen:nth-child(2) img", {
+gsap.fromTo("#products .products_step-two .products__screens .products__screen:nth-child(2) picture", {
   x: "0",
 }, {
   x: "100%",
@@ -147,11 +178,11 @@ gsap.fromTo("#products .products_step-two .products__screens .products__screen:n
 gsap.fromTo("#products .products__galaxy", {
   opacity: 1,
   scale: 1.8,
-  top: "135%",
+  top: "142%",
 }, {
   opacity: 1,
   scale: 1.8,
-  top: "130%",
+  top: "138%",
   scrollTrigger: {
     trigger: "#products",
     start: "top -300%",
@@ -161,11 +192,12 @@ gsap.fromTo("#products .products__galaxy", {
   immediateRender: false
 });
 
+/************* *************/
 
 gsap.fromTo("#products .products__galaxy", {
   opacity: 1,
   scale: 1.8,
-  top: "130%",
+  top: "138%",
   position: "absolute",
 }, {
   opacity: 1,
@@ -173,8 +205,8 @@ gsap.fromTo("#products .products__galaxy", {
   top: "50%",
   scrollTrigger: {
     trigger: "#products",
-    start: "top -450%",
-    end: "top -520%",
+    start: "top -380%",
+    end: "top -450%",
     scrub: true,
   },
   immediateRender: false
@@ -188,8 +220,8 @@ gsap.fromTo("#products .products_step-two .products__screens", {
   scale: 0.4,
   scrollTrigger: {
     trigger: "#products",
-    start: "top -450%",
-    end: "top -520%",
+    start: "top -380%",
+    end: "top -450%",
     scrub: true,
   }
 });
@@ -202,8 +234,8 @@ gsap.fromTo("#products .products_step-one p > span:nth-child(1)", {
   scale: 0,
   scrollTrigger: {
     trigger: "#products",
-    start: "top -450%",
-    end: "top -520%",
+    start: "top -380%",
+    end: "top -450%",
     scrub: true,
   },
   immediateRender: false
@@ -216,8 +248,8 @@ gsap.fromTo("#products .products__galaxy", {
   top: "50%",
   scrollTrigger: {
     trigger: "#products",
-    start: "top -520%",
-    end: "top -521%",
+    start: "top -450%",
+    end: "top -451%",
     scrub: true,
     onEnter: () => {
       gsap.set("#products .products__galaxy", { position: "fixed", top: "50%" });
@@ -225,6 +257,18 @@ gsap.fromTo("#products .products__galaxy", {
 
   },
   immediateRender: false
+});
+
+gsap.fromTo("#products .sun_flare img", {
+  opacity: 1
+}, {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#products",
+    start: "top -380%",
+    end: "top -450%",
+    scrub: true,
+  }
 });
 
 

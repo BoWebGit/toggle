@@ -6,9 +6,13 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.fromTo("#team .team__wrapper > p", {
     opacity: 0,
     scale: 0,
+    x: "-50%",
+    left: "50%",
   }, {
     opacity: 1,
     scale: 1,
+    x: "-50%",
+    left: "50%",
     scrollTrigger: {
       trigger: "#team",
       start: "top 0%",
@@ -20,8 +24,12 @@ gsap.fromTo("#team .team__wrapper > p", {
 gsap.fromTo("#team .col > p", {
     opacity: 0,
     y: 100,
+    x: "-50%",
+    left: "50%",
   }, {
     y: 0,
+    x: "-50%",
+    left: "50%",
     opacity: 1,
     scrollTrigger: {
       trigger: "#team",
@@ -47,7 +55,8 @@ gsap.fromTo(teamCells, {
     },
     stagger: {
       each: 0.3,
-    }
+    },
+    immediateRender: false
 });
 
 gsap.fromTo("#team .team__wrapper > p", {
@@ -58,8 +67,8 @@ gsap.fromTo("#team .team__wrapper > p", {
     scale: 0,
     scrollTrigger: {
       trigger: "#team",
-      start: "top -180%",
-      end: "top -260%",
+      start: "top -140%",
+      end: "top -220%",
       scrub: true,
     },
     immediateRender: false
@@ -74,8 +83,8 @@ gsap.fromTo("#team .col > p", {
     opacity: 0,
     scrollTrigger: {
       trigger: "#team",
-      start: "top -180%",
-      end: "top -260%",
+      start: "top -140%",
+      end: "top -220%",
       scrub: true,
     },
     immediateRender: false
@@ -105,11 +114,12 @@ gsap.fromTo(teamCells, {
   y: 50,
   scrollTrigger: {
       trigger: "#team",
-      start: "top -180%",
-      end: "top -260%",
+      start: "top -140%",
+      end: "top -220%",
     scrub: true,
   },
   stagger: {
     each: 0.2,
-  }
+  },
+  immediateRender: false
 });

@@ -4,8 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Toggle App</title>
+        
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body data-scroll-container>
         <header class="site-header">
             <div class="container">
                 <div class="row">
@@ -17,8 +22,8 @@
                     <div class="col col-4 col-md-3 col-lg-2">
                         <div class="logo">
                             <picture>
-                                <source media="(min-width: 800px)" srcset="./assets/images/logo_header.svg" />
-                                <img src="./assets/images/logo_header.svg" alt="Logo Sites" />
+                                <source media="(max-width: 500px)" srcset="./assets/images/logo_header_m.svg" />
+                                <img src="./assets/images/logo_header_d.svg" alt="Logo Sites" />
                             </picture>
                         </div>
                     </div>
@@ -26,10 +31,10 @@
                         <div class="navbar">
                             <nav>
                                 <ul>
-                                    <li><a href="#home">Home</a></li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#products">Products</a></li>
-                                    <li><a href="#team">Team</a></li>
+                                    <li><a href="#home"data-offset="0">Home</a></li>
+                                    <li><a href="#about" data-offset="50">About</a></li>
+                                    <li><a href="#products" data-offset="150">Products</a></li>
+                                    <li><a href="#team" data-offset="140">Team</a></li>
                                 </ul>
                             </nav>
                             <a class="header_btn" href=""><span>Join us</span></a>
@@ -49,13 +54,19 @@
                             <div class="col col-12">
                                 <div class="home__block">
                                     <picture>
-                                        <img src="./assets/images/toggle_cosmic.svg" alt="Logo Icons" />
+                                        <source srcset="./assets/images/toggle_cosmic.webp" type="image/webp">
+                                        <img src="./assets/images/toggle_cosmic.png" loading="lazy" alt="Logo Icons" />
                                     </picture>
-                                    <h1>Precision <br>in Every App</h1>
+                                    <h1 data-text="Precision in Every App"><span>Precision <br>in Every App</span></h1>
                                     <h3>Innovative Solutions, Seamless Experiences</h3>
                                     <a href="" class="btn">
-                                        <span class="dtn__animation"></span>
+                                        <span class="dtn__animation"><span></span></span>
                                         <span class="dtn__text">
+                                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1H12M12 1V12M12 1L1 12" stroke="white" stroke-width="2"/>
+                                                <rect x="10" width="3" height="3" fill="white"/>    
+                                            </svg>
+                                                
                                             Lets connect
                                         </span>
                                     </a>
@@ -85,58 +96,70 @@
             <section id="about" class="section" data-title="About" >  
                 <div class="section__wrapper-decor">
                     <picture class="bg-step-one">
-                        <img src="./assets/images/bg_about.jpg" alt="Decor Swirl" />
+                        <source srcset="./assets/images/bg_about.webp" type="image/webp">
+                        <img src="./assets/images/bg_about.jpg" width="1440" height="900" alt="Decor Swirl" />
                     </picture>
                     <picture class="about__swirl">
-                        <img src="./assets/images/swirl.jpg" alt="Decor Swirl" />
+                        <source srcset="./assets/images/swirl.webp" type="image/webp">
+                        <img src="./assets/images/swirl.jpg" width="2880" height="1800" alt="Decor Swirl" />
                     </picture>
                     <picture class="about__sphere">
-                        <img src="./assets/images/sphere.png" alt="Decor Sphere" />
+                        <source srcset="./assets/images/sphere.webp" type="image/webp">
+                        <img src="./assets/images/sphere.png" width="640" height="640" alt="Decor Sphere" />
                     </picture>
+                    <div class="about__eclipse">
+                        <picture>
+                            <img src="./assets/images/eclipse.svg" width="420" height="420" alt="Decor Eclipse" />
+                        </picture>
+                        <span>
+
+                        </span>
+                    </div>
                 </div>
                 <div class="section__wrapper">
-                    <div class="container about__step-one">
-                        <div class="row">
-                            <div class="col col-12">
-                                <p class="about__description-top">Toggle Apps develops innovative technologies and products</p>
-                                <div class="about__stats">
-                                    <div class="about__stats-cell">
-                                        <div>
-                                            <h3>500k+</h3>
-                                            <h5>active users</h5>
+                    <div class="about__step-one">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col col-12">
+                                    <p class="about__description-top">Toggle Apps develops innovative technologies and products</p>
+                                    <div class="about__stats">
+                                        <div class="about__stats-cell">
+                                            <div>
+                                                <span></span>
+                                                <h3><span>500k+</span></h3>
+                                                <h5>active users</h5>
+                                            </div>
+                                        </div>
+                                        <div class="about__stats-cell">
+                                            <div>
+                                                <span></span>
+                                                <h3><span>3M</span></h3>
+                                                <h5>downloads</h5>
+                                            </div>
+                                        </div>
+                                        <div class="about__stats-cell">
+                                            <div>
+                                                <span></span>
+                                                <h3><span>4.8</span></h3>
+                                                <h5>average rating</h5>
+                                            </div>
+                                        </div>
+                                        <div class="about__stats-cell">
+                                            <div>
+                                                <span></span>
+                                                <h3><span>1M+</span></h3>
+                                                <h5>connected devices</h5>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="about__stats-cell">
-                                        <div>
-                                            <h3>3M</h3>
-                                            <h5>downloads</h5>
-                                        </div>
-                                    </div>
-                                    <div class="about__stats-cell">
-                                        <div>
-                                            <h3>4.8</h3>
-                                            <h5>average rating</h5>
-                                        </div>
-                                    </div>
-                                    <div class="about__stats-cell">
-                                        <div>
-                                            <h3>1M+</h3>
-                                            <h5>connected devices</h5>
-                                        </div>
-                                    </div>
+                                    <p class="about__description-bottom">Since our inception, our mobile apps have reached nearly half a million users globally</p>
                                 </div>
-                                <p class="about__description-bottom">Since our inception, our mobile apps have reached nearly half a million users globally</p>
                             </div>
                         </div>
                     </div>
                     <div class="container about__step-two">
                         <div class="row">
                             <div class="col col-12">
-                                <div class="about__eclipse">
-                                    <picture>
-                                        <img src="./assets/images/eclipse.svg" alt="Decor Eclipse" />
-                                    </picture>
-                                </div>
                                 <p>Our success is driven by a deep understanding of user needs and a passion for technological advancement...</p>
                             </div>
                         </div>
@@ -151,22 +174,12 @@
                                     <span></span>
                                     <span></span>
                                     <div class="about__slider-wrapper">
-                                        <div class="about__slider-item active">
-                                            <div>
-                                                <div>
-                                                    <picture>
-                                                        <img src="./assets/images/about-icon.png" alt="About Icon" />
-                                                    </picture>
-                                                    <h3>Excellence </br>of execution</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="about__slider-item left">
                                             <div>
                                                 <div>
                                                     <picture>
-                                                        <img src="./assets/images/about-icon2.png" alt="About Icon" />
+                                                        <source srcset="./assets/images/about-icon2.webp" type="image/webp">
+                                                        <img src="./assets/images/about-icon2.png" width="133" height="132" alt="About Icon" />
                                                     </picture>
                                                     <h3>Highest quality </br>standards</h3>
                                                 </div>
@@ -177,9 +190,22 @@
                                             <div>
                                                 <div>
                                                     <picture>
-                                                        <img src="./assets/images/about-icon3.png" alt="About Icon" />
+                                                        <source srcset="./assets/images/about-icon3.webp" type="image/webp">
+                                                        <img src="./assets/images/about-icon3.png" width="133" height="132" alt="About Icon" />
                                                     </picture>
                                                     <h3>Pushing the </br>boundaries</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="about__slider-item active">
+                                            <div>
+                                                <div>
+                                                    <picture>
+                                                        <source srcset="./assets/images/about-icon.webp" type="image/webp">
+                                                        <img src="./assets/images/about-icon.png" width="133" height="132" alt="About Icon" />
+                                                    </picture>
+                                                    <h3>Excellence </br>of execution</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,32 +223,53 @@
             <!--  PRODUCTS SECTION  -->  
 
             <section id="products" class="section" data-title="Products">  
-                <div class="section__wrapper">
-                    <picture class="products__galaxy">
-                        <img src="./assets/images/galaxy.png" alt="Galaxy Decor" />
+                <div class="section__wrapper-decor">
+                    <picture class="sun_flare">
+                        <source srcset="./assets/images/sun_flare.webp" type="image/webp">
+                        <img src="./assets/images/sun_flare.jpg" width="1016" height="422" alt="Sun Flare Decor" />
                     </picture>
+                </div>
+                <div class="section__wrapper-decor screens">
+                    <div class="container products_step-two">
+                        <div class="row">
+                            <div class="col col-12">
+                                <div class="products__screens">
+                                    <div class="products__screen">
+                                        <picture>
+                                            <source srcset="./assets/images/screen/m_screen3.webp" type="image/webp">
+                                            <img src="./assets/images/screen/m_screen3.jpg" width="167" height="376" alt="Mobile Product Screen" />
+                                        </picture>
+                                    </div>
+
+                                    <div class="products__screen">
+                                        <picture>
+                                            <source srcset="./assets/images/screen/m_screen2.webp" type="image/webp">
+                                            <img src="./assets/images/screen/m_screen2.jpg" width="167" height="376" alt="Mobile Product Screen" />
+                                        </picture>
+                                    </div>
+                                    <div class="products__screen active">
+                                        <picture>
+                                            <source srcset="./assets/images/screen/m_screen.webp" type="image/webp">
+                                            <img src="./assets/images/screen/m_screen.jpg" width="230" height="500" alt="Mobile Product Screen" />
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section__wrapper-decor">
+                    <picture class="products__galaxy">
+                        <source srcset="./assets/images/galaxy.webp" type="image/webp">
+                        <img src="./assets/images/galaxy.png" width="2108" height="914" alt="Galaxy Decor" />
+                    </picture>
+                </div>
+                <div class="section__wrapper">
                     <div class="container products_step-one">
                         <div class="row">
                             <div class="col col-12">
                                 <p><span>Our mobile app products</span> <span>seamlessly integrate with the Internet of Things, utilising our proprietary technologies to deliver unparalleled
                                     user experiences</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container products_step-two">
-                        <div class="row">
-                            <div class="col col-12">
-                                <div class="products__screens">
-                                    <picture class="products__screen">
-                                        <img src="./assets/images/m_screen3.png" alt="Mobile Product Screen" />
-                                    </picture>
-                                    <picture class="products__screen">
-                                        <img src="./assets/images/m_screen2.png" alt="Mobile Product Screen" />
-                                    </picture>
-                                    <picture class="products__screen active">
-                                        <img src="./assets/images/m_screen.png" alt="Mobile Product Screen" />
-                                    </picture>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -240,42 +287,50 @@
                                     <div class="items-circle">
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji1.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji1.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji1.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji2.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji2.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji2.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji3.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji3.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji3.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji4.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji4.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji4.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji5.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji5.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji5.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji6.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji6.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji6.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji7.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji7.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji7.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
-                                                <img src="./assets/images/team/memoji8.png" alt="Team Emodji" />
+                                                <source srcset="./assets/images/team/memoji8.webp" type="image/webp">
+                                                <img src="./assets/images/team/memoji8.png" width="60" height="60" alt="Team Emodji" />
                                             </picture>
                                         </span>
                                         
@@ -293,11 +348,14 @@
 
             <section id="careers" class="section" data-title="Careers">  
                 <div class="section__wrapper-decor">
-                    <picture class="light">
-                        <img src="./assets/images/ray.png" alt="" />
-                    </picture>
+                    <div class="light">
+                        <picture>
+                            <source srcset="./assets/images/ray.webp" type="image/webp">
+                            <img src="./assets/images/ray.png" width="882" height="1323" alt="" />
+                        </picture>
+                    </div>
                     <picture class="lines">
-                        <img src="./assets/images/lines.svg" alt="" />
+                        <img src="./assets/images/lines.svg" width="133" height="571" alt="" />
                     </picture>
                 </div> 
                 <div class="section__wrapper">
@@ -305,22 +363,25 @@
                         <div class="row">
                             <div class="col col-12">
                                 <div class="careers__wrapper">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
                                     <div>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
                                         <div>
-                                            <picture class="products__screen"></picture>
-                                                <img src="./assets/images/subtract.svg" alt="Logo minimal" />
-                                            </picture>
-                                            <h2>Join Toggle Apps</h2>
-                                            <p>Work with top talent from leading companies to create groundbreaking mobile solutions</p>
-                                            <span class="divinder"></span>
-                                            <a href=""><span>Explore careers</span></a>
-                                            <span class="decor">
-                                                <span></span>
-                                            </span>
+                                            <div>
+                                                <picture class="products__screen">
+                                                    <source srcset="./assets/images/subtract.webp" type="image/webp">
+                                                    <img src="./assets/images/subtract.png" width="auto" height="auto" alt="Logo minimal" />
+                                                </picture>
+                                                <h2>Join Toggle Apps</h2>
+                                                <p>Work with top talent from leading companies to create groundbreaking mobile solutions</p>
+                                                <span class="divinder"></span>
+                                                <a href=""><span>Explore careers</span></a>
+                                                <span class="decor">
+                                                    <span></span>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -334,10 +395,10 @@
                                 <div class="careers__wrapper">
                                     <div class="email-click">
                                         <span>
-                                            <span>
+                                            <span id="email-text">
                                                 contact@toggle.apps
                                             </span>
-                                            <span>
+                                            <span id="copy-button">
                                                 Copy
                                             </span>
                                         </span>
@@ -349,7 +410,7 @@
                     </div> 
                 </div>
             </section>
-
+            
             <div class="sections-count"></div>
 
             <footer class="site-footer">
@@ -360,18 +421,18 @@
                                 <h2 class="footer__heading"><span>Let’s make something</span> <span>amazing together.</span></h2>
                                 <ul class="footer__nav-top">
                                     <li>
-                                        <a>LinkedIn</a>
+                                        <a href="#" target="_blank">LinkedIn</a>
                                     </li>
                                     <li>
-                                        <a>Careers </a>
+                                        <a href="#" target="_blank">Careers </a>
                                     </li>
                                 </ul>
                                 <span class="footer__divider"></span>
                                 <div class="footer__nav-bottom">
-                                    <a>Privacy policy</a>
-                                    <a>Terms of Service</a>
+                                    <a href="#" target="_blank">Privacy policy</a>
+                                    <a href="#" target="_blank">Terms of Service</a>
                                     <picture class="foter__logo">
-                                        <img src="./assets/images/logo_footer.svg" alt="Site Logo" />
+                                        <img src="./assets/images/logo_footer.svg" width="57" height="42" alt="Site Logo" />
                                     </picture>
                                 </div>
                                 <p>All Rights Reserved</p>

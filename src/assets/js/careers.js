@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+
 gsap.fromTo("#careers .careers__step-one .careers__wrapper", {
     opacity: 0,
     scale: '0.6',
@@ -17,6 +18,20 @@ gsap.fromTo("#careers .careers__step-one .careers__wrapper", {
     }
 });
 
+
+gsap.fromTo("#careers .careers__step-one .careers__wrapper .decor", {
+  opacity: 0,
+}, {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: "#careers",
+    start: "top -80%",
+    end: "top -130%",
+    scrub: true,
+  }
+});
+
+
 gsap.fromTo("#careers .careers__step-one .careers__wrapper img", {
     opacity: 0,
     y: 10
@@ -25,7 +40,7 @@ gsap.fromTo("#careers .careers__step-one .careers__wrapper img", {
     y: 0,
     scrollTrigger: {
       trigger: "#careers",
-      start: "top -100%",
+      start: "top -120%",
       end: "top -160%",
       scrub: true,
     }
@@ -39,7 +54,7 @@ gsap.fromTo("#careers .careers__step-one .careers__wrapper h2", {
     y: 0,
     scrollTrigger: {
       trigger: "#careers",
-      start: "top -100%",
+      start: "top -120%",
       end: "top -160%",
       scrub: true,
     }
@@ -53,46 +68,74 @@ gsap.fromTo("#careers .careers__step-one .careers__wrapper p", {
     y: 0,
     scrollTrigger: {
       trigger: "#careers",
-      start: "top -120%",
+      start: "top -130%",
       end: "top -180%",
       scrub: true,
     }
 });
 
 gsap.fromTo("#careers .careers__step-one .careers__wrapper a", {
-    scale: 0,
+    opacity: 0,
+    scale: 0.6,
   }, {
-    scale: 1,
+    opacity: 1,
+    scale: 1.1,
     scrollTrigger: {
       trigger: "#careers",
-      start: "top -120%",
-      end: "top -180%",
+      start: "top -130%",
+      end: "top -170%",
       scrub: true,
     }
 });
 
-gsap.fromTo("#careers .careers__step-one .careers__wrapper", {
-    y: 0,
-  }, {
-    y: "-100vh",
+gsap.fromTo("#careers .careers__step-one .careers__wrapper a", {
+  opacity: 1,
+  scale: 1.1,
+}, {
+  opacity: 1,
+  scale: 1,
+  scrollTrigger: {
+    trigger: "#careers",
+    start: "top -170.1%",
+    end: "top -180%",
+    scrub: true,
+  },
+  immediateRender: false
+});
+
+gsap.to("#careers .careers__step-one .careers__wrapper", {
+    top: "-100vh",
     scrollTrigger: {
       trigger: "#careers",
-      start: "top -240%",
-      end: "top -350%",
+      start: "top -200%",
+      end: "top -310%",
       scrub: true,
     }
 });
 
+gsap.fromTo("#careers .lines", {
+  top: "100%",
+}, {
+  top: "0",
+  scrollTrigger: {
+    trigger: "#careers",
+    start: "top -200%",
+    end: "top -310%",
+    scrub: true,
+  },
+  immediateRender: false
+});
 
 
-gsap.fromTo("#careers .light", {
+
+gsap.fromTo("#careers .light img", {
     y: "100vh",
   }, {
     y: 0,
     scrollTrigger: {
       trigger: "#careers",
-      start: "top -240%",
-      end: "top -350%",
+      start: "top -200%",
+      end: "top -310%",
       scrub: true,
     }
 });
@@ -100,18 +143,34 @@ gsap.fromTo("#careers .light", {
 
 gsap.fromTo("#careers .careers__step-two", {
   y: "100vh",
+  x: '-50%',
+  left: "50%",
 }, {
   y: 0,
+  x: '-50%',
+  left: "50%",
   scrollTrigger: {
     trigger: "#careers",
-    start: "top -240%",
-    end: "top -350%",
+    start: "top -200%",
+    end: "top -310%",
+    scrub: true,
+  }
+});
+
+gsap.fromTo("#careers .careers__step-two p", {
+  x: '20%',
+}, {
+  x: '0%',
+  scrollTrigger: {
+    trigger: "#careers",
+    start: "top -200%",
+    end: "top -310%",
     scrub: true,
   }
 });
 
 
-gsap.fromTo("#careers .light", {
+gsap.fromTo("#careers .light img", {
   y: 0,
 }, {
   y: "-100vh",
@@ -136,4 +195,17 @@ scrollTrigger: {
   scrub: true,
 },
 immediateRender: false
+});
+
+gsap.fromTo("#careers .lines", {
+  top: "0",
+}, {
+  top: "-100%",
+  scrollTrigger: {
+    trigger: "#careers",
+    start: "top -410%",
+    end: "top -500%",
+    scrub: true,
+  },
+  immediateRender: false
 });

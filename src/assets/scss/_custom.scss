@@ -2,10 +2,6 @@ html.lenis, html.lenis body {
     height: auto;
 }
 
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-}
-
 .lenis.lenis-smooth [data-lenis-prevent] {
     overscroll-behavior: contain;
 }
@@ -31,7 +27,7 @@ html.lenis, html.lenis body {
 }
 
 html, body {
-    max-width: 100vw;
+    max-width: 100vw; 
 }
 
 body {
@@ -41,7 +37,6 @@ body {
     font-size: 14px;
     line-height: 17px;
     font-style: normal;
-    //overflow: hidden;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
@@ -75,11 +70,24 @@ h1 {
     top: 0;
     z-index: 2;
     background: url('../images/pattern.png'); 
+    background-image: image-set(
+        url("../images/pattern.webp"),
+        url("../images/pattern.png"),
+    );
+    background-size: 50%;
     width: 100vw;
     height: 100vh;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.4;
     display: block;
+    mix-blend-mode: overlay;
+}
+
+.count-wrapper {
+    position: fixed;
+    z-index: 100;
+    right: 70px;
+    bottom: 80px;
 }
 
 .sections-count {
@@ -88,14 +96,27 @@ h1 {
     align-items: center;
     padding: 12px 8px;
     gap: 6px;
-    position: fixed;
-    z-index: 100;
+    position: relative;
     width: 19px;
     height: 124px;
-    right: 70px;
-    bottom: 80px;
     background: radial-gradient(50% 62.22% at 50% 50%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.06) 100%);
     border-radius: 57px;
+    position: fixed;
+    z-index: 100;
+    right: 70px;
+    bottom: 80px;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        padding: 0.5px; /* the border thickness */
+        border-radius: 15px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.05));
+        mask: 
+        linear-gradient(#000 0 0) exclude, 
+        linear-gradient(#000 0 0) content-box;
+    }
     @include rwd-max(map-get($grid-breakpoints, sm)){
         right: auto;
         bottom: -20px;
@@ -135,3 +156,35 @@ h1 {
     }
 
 }
+
+
+.gradient-box {
+  
+    display: flex;
+    align-items: center;
+    //width: 50vw;
+    width: 90%;
+    margin: auto;
+    max-width: 22em;
+  
+    position: relative;
+    padding: 30% 2em;
+    box-sizing: border-box;
+  
+    $border: 5px;
+    color: #FFF;
+    background: #000;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border transparent; /* !importanté */
+    border-radius: 1em;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(to right, red, orange);
+    }
+  }

@@ -3,7 +3,11 @@ $rotation-speed: 20s;
 
 .section {
     &#team {
-        height: 360vh;
+        height: 320vh;
+        margin-top: -100vh;
+        .section__wrapper {
+            height: 100dvh;
+        }
         .team__wrapper {
             width: 370px;
             height: 370px;
@@ -24,9 +28,13 @@ $rotation-speed: 20s;
                     height: 60px;
                     border-radius: 50%;
                     transform-origin: 185px 185px;
+                    opacity: 0;
+                    transform: scale(0);
+                    will-change: scale;
+                    image-rendering: high-quality;
                     @include rwd-max(map-get($grid-breakpoints, sm)){
-                        width: 38px;
-                        height: 38px;
+                        width: 42px;
+                        height: 42px;
                         transform-origin: 117.5px 117.5px;
                     }
                     @for $i from 1 through $elements-count {
@@ -35,10 +43,20 @@ $rotation-speed: 20s;
                             picture {
                                 animation: rotate-item $rotation-speed linear infinite reverse;
                                 display: block;
+                                will-change: scale;
+                                image-rendering: high-quality;
                                 img {
                                     transform: rotate(calc(360deg -  360deg / $elements-count * #{$i}));
+                                    backface-visibility: hidden;
+                                    will-change: scale;
+                                    image-rendering: high-quality;
+                                    //border-radius: 50%;
+                                    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.38));
+                                    width: 60px;
+                                    height: 60px;
                                     @include rwd-max(map-get($grid-breakpoints, sm)){
-                                        width: 38px;
+                                        width: 42px;
+                                        height: 42px;
                                     }
                                 }
                             }
@@ -46,7 +64,9 @@ $rotation-speed: 20s;
                     }
                 }
                 & + p {
-                    @include position-absolute;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
                     text-align: center;
                     width: 100%;
                     max-width: 290px;
@@ -58,6 +78,7 @@ $rotation-speed: 20s;
                     @include rwd-max(map-get($grid-breakpoints, sm)){
                         font-size: 20px;
                         max-width: 200px;
+                        margin-top: -20px;
                     }
                 }
             }
@@ -72,8 +93,6 @@ $rotation-speed: 20s;
                 letter-spacing: 0.02em;
                 color: #FFFFFF;
                 position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
                 @include rwd-max(map-get($grid-breakpoints, sm)){
                     max-width: 346px;
                     font-size: 16px;

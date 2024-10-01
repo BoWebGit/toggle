@@ -1,20 +1,150 @@
 .section {
     &#products {
-        height: 600vh;
+        height: 550vh;
         max-width: 100vw;
         margin-top: -100vh;
-        .section__wrapper {
+        .section__wrapper-decor{
             overflow: hidden;
             max-width: 100vw;
+            will-change: inherit;
+            .sun_flare {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
             .products__galaxy {
-                @include position-absolute();
                 z-index: 10;
+                width: 100vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
                 @include rwd-max(map-get($grid-breakpoints, sm)){
                     img {
                         scale: .7;
                     }
                 }
             }
+            .products_step-two {
+                position: absolute;
+                .products__screens {
+                    backface-visibility: hidden;
+                    text-align: center;
+                    will-change: scale;
+                    image-rendering: high-quality;
+                    .products__screen {
+                        backface-visibility: hidden;
+                        will-change: scale;
+                        image-rendering: high-quality;
+                        display: inline-block;
+                        picture {
+                            display: block;
+                            width: 191px;
+                            aspect-ratio: (0.46);
+                            background: rgba(0, 0, 0, 0.2);
+                            border-radius: 34px;
+                            overflow: hidden;
+                            padding: 12px;
+                            backdrop-filter: blur(10px);
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                z-index: -1;
+                                inset: 0;
+                                padding: 0.5px; /* the border thickness */
+                                background: linear-gradient(232.59deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.0525) 50.16%), linear-gradient(52.45deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.0525) 49.84%);
+                                mask: 
+                                linear-gradient(#000 0 0) exclude, 
+                                linear-gradient(#000 0 0) content-box;  
+                                border-radius: 34px;
+                                @include rwd-max(map-get($grid-breakpoints, sm)){
+                                    border-radius: 18px;
+                                }
+                            }
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                transform: translate(12px, 12px);
+                                width: calc(100% - 24px);
+                                height: calc(100% - 24px);
+                                z-index: 10;
+                                inset: 0;
+                                padding: 0.5px;
+                                background: conic-gradient(from 180deg at 50% 50%, #6FAAD7 0deg, #6A20DA 43.2deg, #1B8DD4 100.8deg, #2634EF 167.4deg, #5F16C1 234deg, #A01784 300.6deg, #6FAAD7 360deg);
+                                mask: 
+                                linear-gradient(#000 0 0) exclude, 
+                                linear-gradient(#000 0 0) content-box;  
+                                border-radius: 22px;
+                                @include rwd-max(map-get($grid-breakpoints, sm)){
+                                    transform: translate(6px, 6px);
+                                    width: calc(100% - 12px);
+                                    height: calc(100% - 12px);
+                                    border-radius: 12px;
+                                }
+                            }
+                            img, source {
+                                backface-visibility: hidden;
+                                will-change: scale;
+                                image-rendering: high-quality;
+                                max-width: 100%;
+                                border-radius: 22px;
+                                height: 100%;
+                            }
+                        }
+                        @include rwd-max(map-get($grid-breakpoints, sm)){
+                            picture {
+                                width: 101px;
+                                padding: 6px;
+                                border-radius: 18px;
+                                img  {
+                                    border-radius: 12px;
+                                }
+                            }
+                        }
+                        &:not(.active) {
+                           @include position-absolute;
+                        }
+                        &.active {
+                            position: relative;
+                            z-index: 2;
+                            picture {
+                                width: 254px; 
+                                aspect-ratio: 0.48;
+                                border-radius: 42px;
+                                img {
+                                    border-radius: 32px;
+                                }
+                                &::before { 
+                                    border-radius: 42px;
+                                    @include rwd-max(map-get($grid-breakpoints, sm)){
+                                        border-radius: 24px;
+                                    }
+                                }
+                                &::after {
+                                    border-radius: 32px;
+                                    @include rwd-max(map-get($grid-breakpoints, sm)){
+                                        border-radius: 18px;
+                                    }
+                                }
+                            }
+                            @include rwd-max(map-get($grid-breakpoints, sm)){
+                                picture {
+                                    width: 142px;
+                                    border-radius: 24px;
+                                    img  {
+                                        border-radius: 18px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .section__wrapper {
+            overflow: hidden;
+            max-width: 100vw;
             .products_step-one {
                 max-width: 1158px;
                 @include position-absolute();
@@ -34,30 +164,10 @@
                         &:nth-child(1){
                             position: relative;
                             display: inline-block;
-                        }
-                    }
-                }
-            }
-            .products_step-two {
-                .products__screens {
-                    text-align: center;
-                    .products__screen {
-                        @include rwd-max(map-get($grid-breakpoints, sm)){
-                            img {
-                                width: 101px;
-                            }
-                        }
-                        &:not(.active) {
-                           @include position-absolute;
-                        }
-                        &.active {
-                            position: relative;
-                            z-index: 2;
-                            @include rwd-max(map-get($grid-breakpoints, sm)){
-                                img {
-                                    width: 142px;
-                                }
-                            }
+                            background: #ffffff;
+                            -webkit-text-fill-color: transparent;
+                            -webkit-background-clip: text;
+                            background-clip: text;
                         }
                     }
                 }
