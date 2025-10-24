@@ -17,6 +17,53 @@ gsap.fromTo("#products .products_step-one p", {
     }
 });
 
+// Simple destinations search and list rendering
+const destinationsData = [
+  { city: 'Київ', country: 'Україна' },
+  { city: 'Львів', country: 'Україна' },
+  { city: 'Варшава', country: 'Польща' },
+  { city: 'Краків', country: 'Польща' },
+  { city: 'Прага', country: 'Чехія' },
+  { city: 'Берлін', country: 'Німеччина' },
+  { city: 'Париж', country: 'Франція' },
+  { city: 'Рим', country: 'Італія' },
+  { city: 'Барселона', country: 'Іспанія' },
+  { city: 'Лісабон', country: 'Португалія' },
+];
+
+function renderDestinationsList(items) {
+  const list = document.getElementById('destinations-list');
+  if (!list) return;
+  if (!items || items.length === 0) {
+    list.innerHTML = '<p style="opacity:.7">Нічого не знайдено</p>';
+    return;
+  }
+  const html = items
+    .slice(0, 12)
+    .map((d) => `<div class="destination-item" style="padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.06);backdrop-filter:blur(6px);margin-bottom:8px;border:1px solid rgba(255,255,255,0.08)"><strong>${d.city}</strong> — <span style="opacity:.8">${d.country}</span></div>`)
+    .join('');
+  list.innerHTML = html;
+}
+
+function setupDestinationsSearch() {
+  const input = document.getElementById('destination-search');
+  if (!input) return;
+  renderDestinationsList(destinationsData);
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) {
+      renderDestinationsList(destinationsData);
+      return;
+    }
+    const filtered = destinationsData.filter((d) =>
+      d.city.toLowerCase().includes(q) || d.country.toLowerCase().includes(q)
+    );
+    renderDestinationsList(filtered);
+  });
+}
+
+window.addEventListener('load', setupDestinationsSearch);
+
 gsap.fromTo("#products .sun_flare img", {
   y: "150%",
 }, {
