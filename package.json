@@ -1,5 +1,5 @@
 {
-  "name": "toggle",
+  "name": "travelworld",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,10 +7,10 @@
     "start": "webpack serve --open --mode development",
     "build": "webpack --mode production"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["travel", "tourism", "booking", "adventures"],
+  "author": "TravelWorld Team",
   "license": "ISC",
-  "description": "",
+  "description": "Travel booking web application",
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
