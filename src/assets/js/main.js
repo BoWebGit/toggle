@@ -39,7 +39,8 @@ export function enableScroll() {
 
 import './home';
 import './about';
-import './products';
+import './destinations';
+import './tours';
 import './team';
 import './careers';
 
@@ -151,92 +152,92 @@ window.addEventListener('load', function() {
   });
 
   const sectionH = document.querySelector("#home");
+  const sectionD = document.querySelector("#destinations");
+  const sectionT = document.querySelector("#tours");
   const sectionA = document.querySelector("#about");
-  const sectionP = document.querySelector("#products");
-  const sectionT = document.querySelector("#team");
-  const sectionC = document.querySelector("#careers");
+  const sectionC = document.querySelector("#contact");
 
   let progress = 0;
 
 
   const scrollTriggers = [
     {
-      trigger: "#about",
+      trigger: "#destinations",
       start: "top 100%",
       end: "top -40%",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 0.39, duration: 4, lock: true }),
+      onEnter: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 0.39, duration: 4, lock: true }),
       onEnterBack: () => lenis.scrollTo(sectionH, { offset: 0, duration: 3, lock: true })
     },
     {
-      trigger: "#about",
+      trigger: "#destinations",
       start: "top -60%",
       end: "top -320%",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 3.5, duration: 6, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 0.5, duration: 3.5, lock: true })
+      onEnter: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 3.5, duration: 6, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 0.5, duration: 3.5, lock: true })
     },
     {
-      trigger: "#about",
+      trigger: "#destinations",
       start: "top -490%",
       end: "top -630%",
       toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 6.5, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 4.8, duration: 1.3, lock: true })
+      onEnter: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 6.5, duration: 3, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 4.8, duration: 1.3, lock: true })
     },
     {
-      trigger: "#about",
+      trigger: "#destinations",
       start: "top -665%",
       end: "top -830%",
       toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 8.4, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 6.6, duration: 1.3, lock: true })
+      onEnter: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 8.4, duration: 3, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 6.6, duration: 1.3, lock: true })
     },
     {
-      trigger: "#about",
+      trigger: "#destinations",
       start: "top -910%",
       end: "top -930%",
       toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 9.4, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 9, duration: 1.3, lock: true })
+      onEnter: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 9.4, duration: 3, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 9, duration: 1.3, lock: true })
     },
     {
-      trigger: "#about",
+      trigger: "#destinations",
       start: "top -970%",
       end: "top -990%",
       toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 10, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 9.6, duration: 2, lock: true })
+      onEnter: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 10, duration: 3, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 9.6, duration: 2, lock: true })
     },
     {
-      trigger: "#products",
+      trigger: "#tours",
       start: "top 100%",
       end: "top -130%",
       toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 1.45, duration: 5, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 10, duration: 3, lock: true })
+      onEnter: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 1.45, duration: 5, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionD, { offset: window.innerHeight * 10, duration: 3, lock: true })
     },
     {
-      trigger: "#products",
+      trigger: "#tours",
       start: "top -150%",
       end: "top -370%",
       toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 3.7, duration: 6, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 1.5, duration: 4, lock: true })
+      onEnter: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 3.7, duration: 6, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 1.5, duration: 4, lock: true })
     },
     {
-      trigger: "#team",
+      trigger: "#about",
       start: "top 60%",
       end: "top -110%",
       toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 1.4, duration: 5, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 3.8, duration: 3, lock: true })
+      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 1.4, duration: 5, lock: true }),
+      onEnterBack: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 3.8, duration: 3, lock: true })
     },
     {
-      trigger: "#team",
+      trigger: "#about",
       start: "top -155%",
       end: "top -365%",
       toggleActions: "play none none reverse",
       onEnter: () => lenis.scrollTo(sectionC, { offset: window.innerHeight * 2, duration: 5, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 1.4, duration: 2, lock: true })
+      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 1.4, duration: 2, lock: true })
     }
   ];
   
