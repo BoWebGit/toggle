@@ -10,6 +10,21 @@
         transition: all 1.2s cubic-bezier(0.33, 1, 0.68, 1) .6s;
     }
 
+    // Travel app specific styles
+    &.travel-header {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        margin: 0 2rem;
+        padding: 0.5rem 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        
+        @media (max-width: 768px) {
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+
     .toggle-menu {
         width: 96px;
         height: 40px;

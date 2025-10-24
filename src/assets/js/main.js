@@ -5,19 +5,17 @@ import Lenis from '@studio-freight/lenis'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Initialize smooth scroll
 const lenis = new Lenis({
   duration: 4,
   easing: (t) => 1 - Math.pow(1 - t, 3),
   direction: 'vertical',
   gestureDirection: 'vertical',
-  // lerp: 0.02,
-  // smooth: 1,
   smoothTouch: true,
   touchMultiplier: 8,
   wheelMultiplier: 3,
   infinite: false,
   autoResize: true,
-  //syncTouch: true,
 })
 
 function raf(time) {
@@ -37,16 +35,16 @@ export function enableScroll() {
   lenis.start();
 }
 
-import './home';
-import './about';
-import './products';
-import './team';
-import './careers';
+// Import travel-specific modules
+import './travel/destinations';
+import './travel/tours';
+import './travel/booking';
+import './travel/contact';
 
 window.addEventListener('load', function() {
-
   let isUserScrolling = false;
 
+  // Scroll detection
   window.addEventListener('wheel', () => {
     isUserScrolling = true;
   });
@@ -55,6 +53,7 @@ window.addEventListener('load', function() {
     isUserScrolling = true;
   });
 
+  // Smooth anchor scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       isUserScrolling = false;
@@ -66,29 +65,34 @@ window.addEventListener('load', function() {
   
       if (targetElement) {
         const offset = window.innerHeight * (offsetPercentage / 100);
-        lenis.scrollTo(targetElement, { offset: offset, duration: 0 });
+        lenis.scrollTo(targetElement, { offset: offset, duration: 2 });
       }
     });
   });
 
   document.body.classList.add('loading');
 
+  // Mobile menu toggle
   const navToggle = document.querySelector('.toggle-menu');
   const header = document.querySelector('.site-header');
 
-  navToggle.addEventListener('click', function(){
-    if(header.classList.contains('active')) {
-      header.classList.remove('active');
-      navToggle.innerHTML= 'Menu';
-    } else {
-      header.classList.add('active');
-      navToggle.innerHTML= 'Close';
-    }
-  });
+  if (navToggle && header) {
+    navToggle.addEventListener('click', function(){
+      if(header.classList.contains('active')) {
+        header.classList.remove('active');
+        navToggle.innerHTML = 'Меню';
+      } else {
+        header.classList.add('active');
+        navToggle.innerHTML = 'Закрити';
+      }
+    });
+  }
 
+  // Section progress tracking
   const sections = document.querySelectorAll('.section');
   const sectionsCount = document.querySelector('.sections-count');
 
+  // Footer animation
   gsap.fromTo(".footer__heading span", {
     y: "100%",
     opacity: 0,
@@ -106,6 +110,7 @@ window.addEventListener('load', function() {
     }
   });
 
+  // Create section progress indicators
   sections.forEach((section, index) => {
     const sectionTitle = section.getAttribute("data-title");
     const sectionDiv = document.createElement("div");
@@ -123,7 +128,6 @@ window.addEventListener('load', function() {
     sectionDiv.appendChild(titleSpan);
     sectionDiv.appendChild(percentSpan);
     sectionsCount.appendChild(sectionDiv);
-
 
     gsap.to(percentSpan, {
       scrollTrigger: {
@@ -144,119 +148,162 @@ window.addEventListener('load', function() {
     });
   });
 
-  document.getElementById('copy-button').addEventListener('click', function() {
-    const emailText = document.getElementById('email-text').textContent; 
-    navigator.clipboard.writeText(emailText);
+  // Email copy functionality
+  const copyButton = document.getElementById('copy-button');
+  if (copyButton) {
+    copyButton.addEventListener('click', function() {
+      const emailText = document.getElementById('email-text').textContent; 
+      navigator.clipboard.writeText(emailText).then(() => {
+        copyButton.textContent = 'Скопійовано!';
+        setTimeout(() => {
+          copyButton.textContent = 'Копіювати';
+        }, 2000);
+      });
+    });
+  }
 
-  });
-
-  const sectionH = document.querySelector("#home");
-  const sectionA = document.querySelector("#about");
-  const sectionP = document.querySelector("#products");
-  const sectionT = document.querySelector("#team");
-  const sectionC = document.querySelector("#careers");
-
-  let progress = 0;
-
-
-  const scrollTriggers = [
-    {
-      trigger: "#about",
-      start: "top 100%",
-      end: "top -40%",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 0.39, duration: 4, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionH, { offset: 0, duration: 3, lock: true })
-    },
-    {
-      trigger: "#about",
-      start: "top -60%",
-      end: "top -320%",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 3.5, duration: 6, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 0.5, duration: 3.5, lock: true })
-    },
-    {
-      trigger: "#about",
-      start: "top -490%",
-      end: "top -630%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 6.5, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 4.8, duration: 1.3, lock: true })
-    },
-    {
-      trigger: "#about",
-      start: "top -665%",
-      end: "top -830%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 8.4, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 6.6, duration: 1.3, lock: true })
-    },
-    {
-      trigger: "#about",
-      start: "top -910%",
-      end: "top -930%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 9.4, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 9, duration: 1.3, lock: true })
-    },
-    {
-      trigger: "#about",
-      start: "top -970%",
-      end: "top -990%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 10, duration: 3, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 9.6, duration: 2, lock: true })
-    },
-    {
-      trigger: "#products",
-      start: "top 100%",
-      end: "top -130%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 1.45, duration: 5, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionA, { offset: window.innerHeight * 10, duration: 3, lock: true })
-    },
-    {
-      trigger: "#products",
-      start: "top -150%",
-      end: "top -370%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 3.7, duration: 6, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 1.5, duration: 4, lock: true })
-    },
-    {
-      trigger: "#team",
-      start: "top 60%",
-      end: "top -110%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 1.4, duration: 5, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionP, { offset: window.innerHeight * 3.8, duration: 3, lock: true })
-    },
-    {
-      trigger: "#team",
-      start: "top -155%",
-      end: "top -365%",
-      toggleActions: "play none none reverse",
-      onEnter: () => lenis.scrollTo(sectionC, { offset: window.innerHeight * 2, duration: 5, lock: true }),
-      onEnterBack: () => lenis.scrollTo(sectionT, { offset: window.innerHeight * 1.4, duration: 2, lock: true })
-    }
-  ];
-  
-  scrollTriggers.forEach(triggerConfig => {
-    ScrollTrigger.create({
-      trigger: triggerConfig.trigger,
-      start: triggerConfig.start,
-      end: triggerConfig.end,
-      toggleActions: triggerConfig.toggleActions || "play none none reverse",
-      onEnter: () => {
-        if (isUserScrolling) {
-          triggerConfig.onEnter();
-        }
-      },
-      onEnterBack: () => {
-        if (isUserScrolling) {
-          triggerConfig.onEnterBack();
-        }
+  // Travel search functionality
+  const searchBtn = document.querySelector('.search-btn');
+  if (searchBtn) {
+    searchBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const destination = document.querySelector('.destination-input').value;
+      const date = document.querySelector('.date-input').value;
+      const travelers = document.querySelector('.travelers-select').value;
+      
+      if (!destination) {
+        alert('Будь ласка, введіть напрямок подорожі');
+        return;
+      }
+      
+      // Simulate search - in real app this would make API call
+      console.log('Пошук турів:', { destination, date, travelers });
+      
+      // Scroll to tours section
+      const toursSection = document.querySelector('#tours');
+      if (toursSection) {
+        lenis.scrollTo(toursSection, { offset: 0, duration: 2 });
       }
     });
-  });
-});
+  }
 
+  // Contact form submission
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+      
+      // Simulate form submission
+      console.log('Форма відправлена:', data);
+      
+      // Show success message
+      alert('Дякуємо! Ваша заявка відправлена. Ми зв\'яжемося з вами найближчим часом.');
+      
+      // Reset form
+      contactForm.reset();
+    });
+  }
+
+  // Destination cards hover effects
+  const destinationCards = document.querySelectorAll('.destination-card');
+  destinationCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      gsap.to(this, { scale: 1.05, duration: 0.3 });
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      gsap.to(this, { scale: 1, duration: 0.3 });
+    });
+  });
+
+  // Tour cards interaction
+  const tourCards = document.querySelectorAll('.tour-card');
+  tourCards.forEach((card, index) => {
+    card.addEventListener('click', function() {
+      tourCards.forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Parallax effects for hero section
+  gsap.to('.hero__icon', {
+    y: -50,
+    scrollTrigger: {
+      trigger: '.hero-section',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  // Animate stats on scroll
+  const statItems = document.querySelectorAll('.stat-item h3');
+  statItems.forEach(stat => {
+    const finalValue = stat.textContent;
+    const numericValue = parseInt(finalValue.replace(/[^\d]/g, ''));
+    
+    if (numericValue) {
+      gsap.fromTo(stat, {
+        textContent: 0
+      }, {
+        textContent: numericValue,
+        duration: 2,
+        ease: "power2.out",
+        snap: { textContent: 1 },
+        scrollTrigger: {
+          trigger: stat,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        },
+        onUpdate: function() {
+          const currentValue = Math.round(this.targets()[0].textContent);
+          if (finalValue.includes('K')) {
+            stat.textContent = currentValue + 'K+';
+          } else if (finalValue.includes('/')) {
+            stat.textContent = currentValue + '/7';
+          } else {
+            stat.textContent = currentValue;
+          }
+        }
+      });
+    }
+  });
+
+  // Feature items animation
+  gsap.fromTo('.feature-item', {
+    y: 50,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.about__features',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  // Destinations grid animation
+  gsap.fromTo('.destination-card', {
+    y: 100,
+    opacity: 0
+  }, {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: '.destinations__grid',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  console.log('Travel Explorer загружено успішно!');
+});
