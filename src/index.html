@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Toggle App</title>
+        <title>Travel Explorer - Відкрий світ подорожей</title>
         
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,13 +31,13 @@
                         <div class="navbar">
                             <nav>
                                 <ul>
-                                    <li><a href="#home"data-offset="0">Home</a></li>
-                                    <li><a href="#about" data-offset="50">About</a></li>
-                                    <li><a href="#products" data-offset="150">Products</a></li>
-                                    <li><a href="#team" data-offset="140">Team</a></li>
+                                    <li><a href="#home"data-offset="0">Головна</a></li>
+                                    <li><a href="#destinations" data-offset="50">Напрямки</a></li>
+                                    <li><a href="#tours" data-offset="150">Тури</a></li>
+                                    <li><a href="#about" data-offset="140">Про нас</a></li>
                                 </ul>
                             </nav>
-                            <a class="header_btn" href=""><span>Join us</span></a>
+                            <a class="header_btn" href="#contact"><span>Зв'язатися</span></a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
             <span class="stars"></span>
             <span class="pattern"></span>
             <!--  HERO SECTION  -->
-            <section id="home" class="section" data-title="Home" >
+            <section id="home" class="section" data-title="Головна" >
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
@@ -55,11 +55,11 @@
                                 <div class="home__block">
                                     <picture>
                                         <source srcset="./assets/images/toggle_cosmic.webp" type="image/webp">
-                                        <img src="./assets/images/toggle_cosmic.png" loading="lazy" alt="Logo Icons" />
+                                        <img src="./assets/images/toggle_cosmic.png" loading="lazy" alt="Travel Explorer Logo" />
                                     </picture>
-                                    <h1 data-text="Precision in Every App"><span>Precision <br>in Every App</span></h1>
-                                    <h3>Innovative Solutions, Seamless Experiences</h3>
-                                    <a href="" class="btn">
+                                    <h1 data-text="Відкрий світ подорожей"><span>Відкрий світ <br>подорожей</span></h1>
+                                    <h3>Незвідані місця, незабутні враження</h3>
+                                    <a href="#destinations" class="btn">
                                         <span class="dtn__animation"><span></span></span>
                                         <span class="dtn__text">
                                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@
                                                 <rect x="10" width="3" height="3" fill="white"/>    
                                             </svg>
                                                 
-                                            Lets connect
+                                            Дослідити напрямки
                                         </span>
                                     </a>
                                 </div>
@@ -91,9 +91,9 @@
                 </div>
             </section>
 
-            <!--  ABOUT SECTION  -->
+            <!--  DESTINATIONS SECTION  -->
 
-            <section id="about" class="section" data-title="About" >  
+            <section id="destinations" class="section" data-title="Напрямки" >  
                 <div class="section__wrapper-decor">
                     <picture class="bg-step-one">
                         <source srcset="./assets/images/bg_about.webp" type="image/webp">
@@ -121,38 +121,60 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col col-12">
-                                    <p class="about__description-top">Toggle Apps develops innovative technologies and products</p>
+                                    <p class="about__description-top">Travel Explorer пропонує найкращі напрямки для подорожей по всьому світу</p>
+                                    
+                                    <!-- Search Form -->
+                                    <div class="travel-search">
+                                        <div class="search-form">
+                                            <input type="text" id="destination-search" placeholder="Введіть назву країни або міста..." />
+                                            <select id="travel-type">
+                                                <option value="">Тип подорожі</option>
+                                                <option value="adventure">Пригоди</option>
+                                                <option value="culture">Культура</option>
+                                                <option value="relaxation">Відпочинок</option>
+                                                <option value="nature">Природа</option>
+                                            </select>
+                                            <select id="budget">
+                                                <option value="">Бюджет</option>
+                                                <option value="low">До $1000</option>
+                                                <option value="medium">$1000-3000</option>
+                                                <option value="high">$3000+</option>
+                                            </select>
+                                            <button id="search-btn" class="search-button">Пошук</button>
+                                        </div>
+                                        <div id="search-results" class="search-results"></div>
+                                    </div>
                                     <div class="about__stats">
                                         <div class="about__stats-cell">
                                             <div>
                                                 <span></span>
-                                                <h3><span>500k+</span></h3>
-                                                <h5>active users</h5>
+                                                <h3><span>50+</span></h3>
+                                                <h5>країн</h5>
                                             </div>
                                         </div>
                                         <div class="about__stats-cell">
                                             <div>
                                                 <span></span>
-                                                <h3><span>3M</span></h3>
-                                                <h5>downloads</h5>
+                                                <h3><span>200+</span></h3>
+                                                <h5>туристів</h5>
                                             </div>
                                         </div>
                                         <div class="about__stats-cell">
                                             <div>
                                                 <span></span>
-                                                <h3><span>4.8</span></h3>
-                                                <h5>average rating</h5>
+                                                <h3><span>4.9</span></h3>
+                                                <h5>рейтинг</h5>
                                             </div>
                                         </div>
                                         <div class="about__stats-cell">
                                             <div>
                                                 <span></span>
-                                                <h3><span>1M+</span></h3>
-                                                <h5>connected devices</h5>
+                                                <h3><span>5+</span></h3>
+                                                <h5>років досвіду</h5>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="about__description-bottom">Since our inception, our mobile apps have reached nearly half a million users globally</p>
+                                    <p class="about__description-bottom">З моменту заснування ми організували подорожі для понад 200 туристів по всьому світу</p>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +189,7 @@
                     <div class="container about__step-three">
                         <div class="row">
                             <div class="col col-12">
-                                <p>...with the </br>commitment to...</p>
+                                <p>Наші напрямки </br>включають...</p>
                                 <div class="about__slider">
                                     <span></span>
                                     <span></span>
@@ -179,9 +201,9 @@
                                                 <div>
                                                     <picture>
                                                         <source srcset="./assets/images/about-icon2.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon2.png" width="133" height="132" alt="About Icon" />
+                                                        <img src="./assets/images/about-icon2.png" width="133" height="132" alt="Destination Icon" />
                                                     </picture>
-                                                    <h3>Highest quality </br>standards</h3>
+                                                    <h3>Екзотичні </br>країни</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -191,9 +213,9 @@
                                                 <div>
                                                     <picture>
                                                         <source srcset="./assets/images/about-icon3.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon3.png" width="133" height="132" alt="About Icon" />
+                                                        <img src="./assets/images/about-icon3.png" width="133" height="132" alt="Destination Icon" />
                                                     </picture>
-                                                    <h3>Pushing the </br>boundaries</h3>
+                                                    <h3>Культурні </br>подорожі</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,9 +225,9 @@
                                                 <div>
                                                     <picture>
                                                         <source srcset="./assets/images/about-icon.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon.png" width="133" height="132" alt="About Icon" />
+                                                        <img src="./assets/images/about-icon.png" width="133" height="132" alt="Destination Icon" />
                                                     </picture>
-                                                    <h3>Excellence </br>of execution</h3>
+                                                    <h3>Природні </br>чудеса</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -222,7 +244,7 @@
 
             <!--  PRODUCTS SECTION  -->  
 
-            <section id="products" class="section" data-title="Products">  
+            <section id="tours" class="section" data-title="Тури">  
                 <div class="section__wrapper-decor">
                     <picture class="sun_flare">
                         <source srcset="./assets/images/sun_flare.webp" type="image/webp">
@@ -268,8 +290,36 @@
                     <div class="container products_step-one">
                         <div class="row">
                             <div class="col col-12">
-                                <p><span>Our mobile app products</span> <span>seamlessly integrate with the Internet of Things, utilising our proprietary technologies to deliver unparalleled
-                                    user experiences</span></p>
+                                <p><span>Наші туристичні пакети</span> <span>включають найкращі напрямки по всьому світу, використовуючи наш досвід для створення незабутних
+                                    подорожей</span></p>
+                                
+                                <!-- Interactive World Map -->
+                                <div class="world-map-container">
+                                    <div class="map-legend">
+                                        <h3>Популярні напрямки</h3>
+                                        <div class="legend-items">
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background: #FFD700;"></span>
+                                                <span>Культурні тури</span>
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background: #FF6347;"></span>
+                                                <span>Пригоди</span>
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background: #32CD32;"></span>
+                                                <span>Природа</span>
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background: #87CEEB;"></span>
+                                                <span>Відпочинок</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="world-map" id="world-map">
+                                        <!-- Map will be generated by JavaScript -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -278,7 +328,7 @@
 
             <!--  TEAM SECTION  -->  
 
-            <section id="team" class="section" data-title="Teams">  
+            <section id="about" class="section" data-title="Про нас">  
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
@@ -335,9 +385,9 @@
                                         </span>
                                         
                                     </div>
-                                    <p>The Heart of Toggle Apps</p>
+                                    <p>Серце Travel Explorer</p>
                                </div>
-                                <p>At Toggle Apps, we go to great lengths to assemble a team of exceptional talent, ensuring that we only bring in the best minds in the industry</p>
+                                <p>У Travel Explorer ми зібрали команду досвідчених гідів та експертів з туризму, які допоможуть вам відкрити найкращі куточки світу</p>
                             </div>
                         </div>
                     </div>
@@ -346,7 +396,7 @@
 
             <!--  CAREERS SECTION  -->  
 
-            <section id="careers" class="section" data-title="Careers">  
+            <section id="contact" class="section" data-title="Контакти">  
                 <div class="section__wrapper-decor">
                     <div class="light">
                         <picture>
@@ -374,10 +424,10 @@
                                                     <source srcset="./assets/images/subtract.webp" type="image/webp">
                                                     <img src="./assets/images/subtract.png" width="auto" height="auto" alt="Logo minimal" />
                                                 </picture>
-                                                <h2>Join Toggle Apps</h2>
-                                                <p>Work with top talent from leading companies to create groundbreaking mobile solutions</p>
+                                                <h2>Зв'яжіться з нами</h2>
+                                                <p>Плануйте свою ідеальну подорож з нашими експертами з туризму</p>
                                                 <span class="divinder"></span>
-                                                <a href=""><span>Explore careers</span></a>
+                                                <a href="#contact"><span>Зв'язатися</span></a>
                                                 <span class="decor">
                                                     <span></span>
                                                 </span>
@@ -396,10 +446,10 @@
                                     <div class="email-click">
                                         <span>
                                             <span id="email-text">
-                                                contact@toggle.apps
+                                                info@travelexplorer.com
                                             </span>
                                             <span id="copy-button">
-                                                Copy
+                                                Копіювати
                                             </span>
                                         </span>
                                     </div>
@@ -421,22 +471,22 @@
                                 <h2 class="footer__heading"><span>Let’s make something</span> <span>amazing together.</span></h2>
                                 <ul class="footer__nav-top">
                                     <li>
-                                        <a href="#" target="_blank">LinkedIn</a>
+                                        <a href="#" target="_blank">Instagram</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">Careers </a>
+                                        <a href="#" target="_blank">Facebook</a>
                                     </li>
                                 </ul>
                                 <span class="footer__divider"></span>
                                 <div class="footer__nav-bottom">
-                                    <a href="#" target="_blank">Privacy policy</a>
-                                    <a href="#" target="_blank">Terms of Service</a>
+                                    <a href="#" target="_blank">Політика конфіденційності</a>
+                                    <a href="#" target="_blank">Умови використання</a>
                                     <picture class="foter__logo">
                                         <img src="./assets/images/logo_footer.svg" width="57" height="42" alt="Site Logo" />
                                     </picture>
                                 </div>
-                                <p>All Rights Reserved</p>
-                                <p>©Toggle Apps 2024</p>
+                                <p>Всі права захищені</p>
+                                <p>©Travel Explorer 2024</p>
                             </div>
                         </div>
                     </div>
