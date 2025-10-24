@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Toggle App</title>
+        <title>Travel Explorer - Відкрий світ подорожей</title>
         
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,14 +16,14 @@
                 <div class="row">
                     <div class="col col-4 col-md-0">
                         <span class="toggle-menu">
-                            Menu 
+                            Меню 
                         </span>
                     </div>  
                     <div class="col col-4 col-md-3 col-lg-2">
                         <div class="logo">
                             <picture>
                                 <source media="(max-width: 500px)" srcset="./assets/images/logo_header_m.svg" />
-                                <img src="./assets/images/logo_header_d.svg" alt="Logo Sites" />
+                                <img src="./assets/images/logo_header_d.svg" alt="Travel Explorer Logo" />
                             </picture>
                         </div>
                     </div>
@@ -31,13 +31,13 @@
                         <div class="navbar">
                             <nav>
                                 <ul>
-                                    <li><a href="#home"data-offset="0">Home</a></li>
-                                    <li><a href="#about" data-offset="50">About</a></li>
-                                    <li><a href="#products" data-offset="150">Products</a></li>
-                                    <li><a href="#team" data-offset="140">Team</a></li>
+                                    <li><a href="#home"data-offset="0">Головна</a></li>
+                                    <li><a href="#destinations" data-offset="50">Напрямки</a></li>
+                                    <li><a href="#tours" data-offset="150">Тури</a></li>
+                                    <li><a href="#about" data-offset="140">Про нас</a></li>
                                 </ul>
                             </nav>
-                            <a class="header_btn" href=""><span>Join us</span></a>
+                            <a class="header_btn" href="#contact"><span>Зв'язатися</span></a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
             <span class="stars"></span>
             <span class="pattern"></span>
             <!--  HERO SECTION  -->
-            <section id="home" class="section" data-title="Home" >
+            <section id="home" class="section" data-title="Головна" >
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
@@ -55,11 +55,11 @@
                                 <div class="home__block">
                                     <picture>
                                         <source srcset="./assets/images/toggle_cosmic.webp" type="image/webp">
-                                        <img src="./assets/images/toggle_cosmic.png" loading="lazy" alt="Logo Icons" />
+                                        <img src="./assets/images/toggle_cosmic.png" loading="lazy" alt="Travel Explorer Logo" />
                                     </picture>
-                                    <h1 data-text="Precision in Every App"><span>Precision <br>in Every App</span></h1>
-                                    <h3>Innovative Solutions, Seamless Experiences</h3>
-                                    <a href="" class="btn">
+                                    <h1 data-text="Відкрий світ подорожей"><span>Відкрий світ <br>подорожей</span></h1>
+                                    <h3>Незвідані місця, незабутні враження</h3>
+                                    <a href="#destinations" class="btn">
                                         <span class="dtn__animation"><span></span></span>
                                         <span class="dtn__text">
                                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@
                                                 <rect x="10" width="3" height="3" fill="white"/>    
                                             </svg>
                                                 
-                                            Lets connect
+                                            Дослідити
                                         </span>
                                     </a>
                                 </div>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="home__scroll-down">
-                        <span><span>scroll down...</span></span>
+                        <span><span>прокрутити вниз...</span></span>
                         <span>
                             <svg width="13" height="19" viewBox="0 0 13 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11 6V13C11 15.1416 9.50399 16.9338 7.5 17.3885V14C7.5 13.4477 7.05228 13 6.5 13C5.94772 13 5.5 13.4477 5.5 14V17.3885C3.49601 16.9338 2 15.1416 2 13V6C2 3.51472 4.01472 1.5 6.5 1.5C8.98528 1.5 11 3.51472 11 6ZM6.5 19C3.18629 19 0.5 16.3137 0.5 13V6C0.5 2.68629 3.18629 0 6.5 0C9.81371 0 12.5 2.68629 12.5 6V13C12.5 16.3137 9.81371 19 6.5 19Z" fill="url(#paint0_linear_435_2398)"/>
@@ -91,25 +91,25 @@
                 </div>
             </section>
 
-            <!--  ABOUT SECTION  -->
+            <!--  DESTINATIONS SECTION  -->
 
-            <section id="about" class="section" data-title="About" >  
+            <section id="destinations" class="section" data-title="Напрямки" >  
                 <div class="section__wrapper-decor">
                     <picture class="bg-step-one">
                         <source srcset="./assets/images/bg_about.webp" type="image/webp">
-                        <img src="./assets/images/bg_about.jpg" width="1440" height="900" alt="Decor Swirl" />
+                        <img src="./assets/images/bg_about.jpg" width="1440" height="900" alt="Travel Destinations Background" />
                     </picture>
                     <picture class="about__swirl">
                         <source srcset="./assets/images/swirl.webp" type="image/webp">
-                        <img src="./assets/images/swirl.jpg" width="2880" height="1800" alt="Decor Swirl" />
+                        <img src="./assets/images/swirl.jpg" width="2880" height="1800" alt="Travel Swirl" />
                     </picture>
                     <picture class="about__sphere">
                         <source srcset="./assets/images/sphere.webp" type="image/webp">
-                        <img src="./assets/images/sphere.png" width="640" height="640" alt="Decor Sphere" />
+                        <img src="./assets/images/sphere.png" width="640" height="640" alt="Travel Sphere" />
                     </picture>
                     <div class="about__eclipse">
                         <picture>
-                            <img src="./assets/images/eclipse.svg" width="420" height="420" alt="Decor Eclipse" />
+                            <img src="./assets/images/eclipse.svg" width="420" height="420" alt="Travel Eclipse" />
                         </picture>
                         <span>
 
@@ -119,55 +119,138 @@
                 <div class="section__wrapper">
                     <div class="about__step-one">
                         <div class="container">
-                            <div class="row">
-                                <div class="col col-12">
-                                    <p class="about__description-top">Toggle Apps develops innovative technologies and products</p>
-                                    <div class="about__stats">
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>500k+</span></h3>
-                                                <h5>active users</h5>
-                                            </div>
-                                        </div>
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>3M</span></h3>
-                                                <h5>downloads</h5>
-                                            </div>
-                                        </div>
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>4.8</span></h3>
-                                                <h5>average rating</h5>
-                                            </div>
-                                        </div>
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>1M+</span></h3>
-                                                <h5>connected devices</h5>
-                                            </div>
+                        <div class="row">
+                            <div class="col col-12">
+                                <!-- Search and Filter Section -->
+                                <div class="search-filter-section">
+                                    <div class="search-box">
+                                        <input type="text" id="destination-search" placeholder="Пошук напрямків...">
+                                        <button class="search-btn">🔍</button>
+                                    </div>
+                                    <div class="filter-buttons">
+                                        <button class="filter-btn active" data-filter="all">Всі</button>
+                                        <button class="filter-btn" data-filter="europe">Європа</button>
+                                        <button class="filter-btn" data-filter="asia">Азія</button>
+                                        <button class="filter-btn" data-filter="america">Америка</button>
+                                        <button class="filter-btn" data-filter="africa">Африка</button>
+                                    </div>
+                                </div>
+                                <p class="about__description-top">Travel Explorer відкриває найкращі місця світу для подорожей</p>
+                                <div class="about__stats">
+                                    <div class="about__stats-cell">
+                                        <div>
+                                            <span></span>
+                                            <h3><span>50+</span></h3>
+                                            <h5>країн</h5>
                                         </div>
                                     </div>
-                                    <p class="about__description-bottom">Since our inception, our mobile apps have reached nearly half a million users globally</p>
+                                    <div class="about__stats-cell">
+                                        <div>
+                                            <span></span>
+                                            <h3><span>200+</span></h3>
+                                            <h5>туристів</h5>
+                                        </div>
+                                    </div>
+                                    <div class="about__stats-cell">
+                                        <div>
+                                            <span></span>
+                                            <h3><span>4.9</span></h3>
+                                            <h5>рейтинг</h5>
+                                        </div>
+                                    </div>
+                                    <div class="about__stats-cell">
+                                        <div>
+                                            <span></span>
+                                            <h3><span>100+</span></h3>
+                                            <h5>напрямків</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="about__description-bottom">З моменту заснування ми допомогли тисячам туристів відкрити найкращі місця планети</p>
+                                
+                                <!-- Destinations Grid -->
+                                <div class="destinations-grid" id="destinations-grid">
+                                    <div class="destination-card" data-category="europe">
+                                        <div class="destination-image">
+                                            <img src="./assets/images/bg_about.jpg" alt="Париж, Франція">
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Париж, Франція</h3>
+                                            <p>Місто світла та романтики</p>
+                                            <span class="price">від $800</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="destination-card" data-category="asia">
+                                        <div class="destination-image">
+                                            <img src="./assets/images/galaxy.png" alt="Токіо, Японія">
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Токіо, Японія</h3>
+                                            <p>Сучасність та традиції</p>
+                                            <span class="price">від $1200</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="destination-card" data-category="america">
+                                        <div class="destination-image">
+                                            <img src="./assets/images/sun_flare.jpg" alt="Нью-Йорк, США">
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Нью-Йорк, США</h3>
+                                            <p>Місто, яке ніколи не спить</p>
+                                            <span class="price">від $1000</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="destination-card" data-category="africa">
+                                        <div class="destination-image">
+                                            <img src="./assets/images/sphere.png" alt="Кейптаун, ПАР">
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Кейптаун, ПАР</h3>
+                                            <p>Природа та пригоди</p>
+                                            <span class="price">від $900</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="destination-card" data-category="europe">
+                                        <div class="destination-image">
+                                            <img src="./assets/images/swirl.jpg" alt="Рим, Італія">
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Рим, Італія</h3>
+                                            <p>Вічне місто</p>
+                                            <span class="price">від $750</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="destination-card" data-category="asia">
+                                        <div class="destination-image">
+                                            <img src="./assets/images/ray.png" alt="Бангкок, Таїланд">
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Бангкок, Таїланд</h3>
+                                            <p>Екзотика та культура</p>
+                                            <span class="price">від $600</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                     <div class="container about__step-two">
                         <div class="row">
                             <div class="col col-12">
-                                <p>Our success is driven by a deep understanding of user needs and a passion for technological advancement...</p>
+                                <p>Наш успіх базується на глибокому розумінні потреб мандрівників та пристрасті до відкриття нових горизонтів...</p>
                             </div>
                         </div>
                     </div>
                     <div class="container about__step-three">
                         <div class="row">
                             <div class="col col-12">
-                                <p>...with the </br>commitment to...</p>
+                                <p>...з пристрастю до...</p>
                                 <div class="about__slider">
                                     <span></span>
                                     <span></span>
@@ -179,9 +262,9 @@
                                                 <div>
                                                     <picture>
                                                         <source srcset="./assets/images/about-icon2.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon2.png" width="133" height="132" alt="About Icon" />
+                                                        <img src="./assets/images/about-icon2.png" width="133" height="132" alt="Travel Icon" />
                                                     </picture>
-                                                    <h3>Highest quality </br>standards</h3>
+                                                    <h3>Найвища якість </br>обслуговування</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -191,9 +274,9 @@
                                                 <div>
                                                     <picture>
                                                         <source srcset="./assets/images/about-icon3.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon3.png" width="133" height="132" alt="About Icon" />
+                                                        <img src="./assets/images/about-icon3.png" width="133" height="132" alt="Travel Icon" />
                                                     </picture>
-                                                    <h3>Pushing the </br>boundaries</h3>
+                                                    <h3>Розширення </br>меж</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,9 +286,9 @@
                                                 <div>
                                                     <picture>
                                                         <source srcset="./assets/images/about-icon.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon.png" width="133" height="132" alt="About Icon" />
+                                                        <img src="./assets/images/about-icon.png" width="133" height="132" alt="Travel Icon" />
                                                     </picture>
-                                                    <h3>Excellence </br>of execution</h3>
+                                                    <h3>Досконалість </br>виконання</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -220,37 +303,37 @@
                 </div>
             </section>
 
-            <!--  PRODUCTS SECTION  -->  
+            <!--  TOURS SECTION  -->  
 
-            <section id="products" class="section" data-title="Products">  
+            <section id="tours" class="section" data-title="Тури" >  
                 <div class="section__wrapper-decor">
                     <picture class="sun_flare">
                         <source srcset="./assets/images/sun_flare.webp" type="image/webp">
-                        <img src="./assets/images/sun_flare.jpg" width="1016" height="422" alt="Sun Flare Decor" />
+                        <img src="./assets/images/sun_flare.jpg" width="1016" height="422" alt="Travel Sun Flare" />
                     </picture>
                 </div>
                 <div class="section__wrapper-decor screens">
-                    <div class="container products_step-two">
+                    <div class="container tours_step-two">
                         <div class="row">
                             <div class="col col-12">
-                                <div class="products__screens">
-                                    <div class="products__screen">
+                                <div class="tours__screens">
+                                    <div class="tours__screen">
                                         <picture>
                                             <source srcset="./assets/images/screen/m_screen3.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen3.jpg" width="167" height="376" alt="Mobile Product Screen" />
+                                            <img src="./assets/images/screen/m_screen3.jpg" width="167" height="376" alt="Travel App Screen" />
                                         </picture>
                                     </div>
 
-                                    <div class="products__screen">
+                                    <div class="tours__screen">
                                         <picture>
                                             <source srcset="./assets/images/screen/m_screen2.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen2.jpg" width="167" height="376" alt="Mobile Product Screen" />
+                                            <img src="./assets/images/screen/m_screen2.jpg" width="167" height="376" alt="Travel App Screen" />
                                         </picture>
                                     </div>
-                                    <div class="products__screen active">
+                                    <div class="tours__screen active">
                                         <picture>
                                             <source srcset="./assets/images/screen/m_screen.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen.jpg" width="230" height="500" alt="Mobile Product Screen" />
+                                            <img src="./assets/images/screen/m_screen.jpg" width="230" height="500" alt="Travel App Screen" />
                                         </picture>
                                     </div>
                                 </div>
@@ -259,26 +342,88 @@
                     </div>
                 </div>
                 <div class="section__wrapper-decor">
-                    <picture class="products__galaxy">
+                    <picture class="tours__galaxy">
                         <source srcset="./assets/images/galaxy.webp" type="image/webp">
-                        <img src="./assets/images/galaxy.png" width="2108" height="914" alt="Galaxy Decor" />
+                        <img src="./assets/images/galaxy.png" width="2108" height="914" alt="Travel Galaxy" />
                     </picture>
                 </div>
                 <div class="section__wrapper">
-                    <div class="container products_step-one">
+                    <div class="container tours_step-one">
                         <div class="row">
                             <div class="col col-12">
-                                <p><span>Our mobile app products</span> <span>seamlessly integrate with the Internet of Things, utilising our proprietary technologies to deliver unparalleled
-                                    user experiences</span></p>
+                                <p><span>Наші туристичні програми</span> <span>допомагають відкрити найкращі місця світу, використовуючи наш досвід та знання для створення незабутніх
+                                    подорожей</span></p>
+                                
+                                <!-- Tours Grid -->
+                                <div class="tours-grid">
+                                    <div class="tour-card">
+                                        <div class="tour-image">
+                                            <img src="./assets/images/bg_about.jpg" alt="Класичний тур Європою">
+                                            <div class="tour-badge">Популярний</div>
+                                        </div>
+                                        <div class="tour-content">
+                                            <h3>Класичний тур Європою</h3>
+                                            <p>7 днів • 5 міст • Включено харчування</p>
+                                            <div class="tour-rating">
+                                                <span class="stars">★★★★★</span>
+                                                <span class="rating-text">4.9 (127 відгуків)</span>
+                                            </div>
+                                            <div class="tour-price">
+                                                <span class="price">$1,299</span>
+                                                <span class="old-price">$1,599</span>
+                                            </div>
+                                            <button class="tour-btn">Детальніше</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tour-card">
+                                        <div class="tour-image">
+                                            <img src="./assets/images/galaxy.png" alt="Екзотична Азія">
+                                            <div class="tour-badge">Новий</div>
+                                        </div>
+                                        <div class="tour-content">
+                                            <h3>Екзотична Азія</h3>
+                                            <p>10 днів • 3 країни • Гіди включено</p>
+                                            <div class="tour-rating">
+                                                <span class="stars">★★★★☆</span>
+                                                <span class="rating-text">4.7 (89 відгуків)</span>
+                                            </div>
+                                            <div class="tour-price">
+                                                <span class="price">$2,199</span>
+                                                <span class="old-price">$2,499</span>
+                                            </div>
+                                            <button class="tour-btn">Детальніше</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tour-card">
+                                        <div class="tour-image">
+                                            <img src="./assets/images/sun_flare.jpg" alt="Пригоди в Америці">
+                                        </div>
+                                        <div class="tour-content">
+                                            <h3>Пригоди в Америці</h3>
+                                            <p>14 днів • 8 міст • Всі екскурсії</p>
+                                            <div class="tour-rating">
+                                                <span class="stars">★★★★★</span>
+                                                <span class="rating-text">4.8 (156 відгуків)</span>
+                                            </div>
+                                            <div class="tour-price">
+                                                <span class="price">$3,299</span>
+                                                <span class="old-price">$3,799</span>
+                                            </div>
+                                            <button class="tour-btn">Детальніше</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!--  TEAM SECTION  -->  
+            <!--  ABOUT SECTION  -->  
 
-            <section id="team" class="section" data-title="Teams">  
+            <section id="about" class="section" data-title="Про нас" >  
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
@@ -288,74 +433,74 @@
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji1.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji1.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji1.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji2.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji2.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji2.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji3.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji3.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji3.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji4.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji4.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji4.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji5.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji5.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji5.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji6.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji6.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji6.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji7.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji7.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji7.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         <span>
                                             <picture>
                                                 <source srcset="./assets/images/team/memoji8.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji8.png" width="60" height="60" alt="Team Emodji" />
+                                                <img src="./assets/images/team/memoji8.png" width="60" height="60" alt="Team Member" />
                                             </picture>
                                         </span>
                                         
                                     </div>
-                                    <p>The Heart of Toggle Apps</p>
+                                    <p>Серце Travel Explorer</p>
                                </div>
-                                <p>At Toggle Apps, we go to great lengths to assemble a team of exceptional talent, ensuring that we only bring in the best minds in the industry</p>
+                                <p>У Travel Explorer ми збираємо команду виняткових талантів, забезпечуючи тільки найкращих експертів у галузі туризму</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!--  CAREERS SECTION  -->  
+            <!--  CONTACT SECTION  -->  
 
-            <section id="careers" class="section" data-title="Careers">  
+            <section id="contact" class="section" data-title="Контакти" >  
                 <div class="section__wrapper-decor">
                     <div class="light">
                         <picture>
                             <source srcset="./assets/images/ray.webp" type="image/webp">
-                            <img src="./assets/images/ray.png" width="882" height="1323" alt="" />
+                            <img src="./assets/images/ray.png" width="882" height="1323" alt="Contact Light" />
                         </picture>
                     </div>
                     <picture class="lines">
-                        <img src="./assets/images/lines.svg" width="133" height="571" alt="" />
+                        <img src="./assets/images/lines.svg" width="133" height="571" alt="Contact Lines" />
                     </picture>
                 </div> 
                 <div class="section__wrapper">
@@ -370,14 +515,14 @@
                                         <span></span>
                                         <div>
                                             <div>
-                                                <picture class="products__screen">
+                                                <picture class="tours__screen">
                                                     <source srcset="./assets/images/subtract.webp" type="image/webp">
-                                                    <img src="./assets/images/subtract.png" width="auto" height="auto" alt="Logo minimal" />
+                                                    <img src="./assets/images/subtract.png" width="auto" height="auto" alt="Travel Explorer Logo" />
                                                 </picture>
-                                                <h2>Join Toggle Apps</h2>
-                                                <p>Work with top talent from leading companies to create groundbreaking mobile solutions</p>
+                                                <h2>Приєднуйся до Travel Explorer</h2>
+                                                <p>Працюй з найкращими експертами для створення революційних туристичних рішень</p>
                                                 <span class="divinder"></span>
-                                                <a href=""><span>Explore careers</span></a>
+                                                <a href="#contact"><span>Дослідити можливості</span></a>
                                                 <span class="decor">
                                                     <span></span>
                                                 </span>
@@ -396,14 +541,14 @@
                                     <div class="email-click">
                                         <span>
                                             <span id="email-text">
-                                                contact@toggle.apps
+                                                contact@travel-explorer.com
                                             </span>
                                             <span id="copy-button">
-                                                Copy
+                                                Копіювати
                                             </span>
                                         </span>
                                     </div>
-                                    <p>Any questions? Let’s talk</p>
+                                    <p>Є питання? Давай поговоримо</p>
                                 </div>
                             </div>
                         </div>
@@ -418,25 +563,25 @@
                     <div class="row">
                         <div class="col col-12">
                             <div>
-                                <h2 class="footer__heading"><span>Let’s make something</span> <span>amazing together.</span></h2>
+                                <h2 class="footer__heading"><span>Давай створимо щось</span> <span>дивовижне разом.</span></h2>
                                 <ul class="footer__nav-top">
                                     <li>
                                         <a href="#" target="_blank">LinkedIn</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">Careers </a>
+                                        <a href="#contact" target="_blank">Контакти</a>
                                     </li>
                                 </ul>
                                 <span class="footer__divider"></span>
                                 <div class="footer__nav-bottom">
-                                    <a href="#" target="_blank">Privacy policy</a>
-                                    <a href="#" target="_blank">Terms of Service</a>
+                                    <a href="#" target="_blank">Політика конфіденційності</a>
+                                    <a href="#" target="_blank">Умови використання</a>
                                     <picture class="foter__logo">
-                                        <img src="./assets/images/logo_footer.svg" width="57" height="42" alt="Site Logo" />
+                                        <img src="./assets/images/logo_footer.svg" width="57" height="42" alt="Travel Explorer Logo" />
                                     </picture>
                                 </div>
-                                <p>All Rights Reserved</p>
-                                <p>©Toggle Apps 2024</p>
+                                <p>Всі права захищені</p>
+                                <p>©Travel Explorer 2024</p>
                             </div>
                         </div>
                     </div>
