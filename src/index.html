@@ -31,10 +31,10 @@
                         <div class="navbar">
                             <nav>
                                 <ul>
-                                    <li><a href="#home"data-offset="0">Home</a></li>
+                                    <li><a href="#home" data-offset="0">Home</a></li>
                                     <li><a href="#about" data-offset="50">About</a></li>
-                                    <li><a href="#products" data-offset="150">Products</a></li>
-                                    <li><a href="#team" data-offset="140">Team</a></li>
+                                    <li><a href="#products" data-offset="150">Destinations</a></li>
+                                    <li><a href="#careers" data-offset="140">Planner</a></li>
                                 </ul>
                             </nav>
                             <a class="header_btn" href=""><span>Join us</span></a>
@@ -222,7 +222,7 @@
 
             <!--  PRODUCTS SECTION  -->  
 
-            <section id="products" class="section" data-title="Products">  
+            <section id="products" class="section" data-title="Destinations">  
                 <div class="section__wrapper-decor">
                     <picture class="sun_flare">
                         <source srcset="./assets/images/sun_flare.webp" type="image/webp">
@@ -234,24 +234,27 @@
                         <div class="row">
                             <div class="col col-12">
                                 <div class="products__screens">
-                                    <div class="products__screen">
+                                    <div class="products__screen" data-name="Kyiv" data-country="Ukraine" data-id="kyiv">
                                         <picture>
                                             <source srcset="./assets/images/screen/m_screen3.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen3.jpg" width="167" height="376" alt="Mobile Product Screen" />
+                                            <img src="./assets/images/screen/m_screen3.jpg" width="167" height="376" alt="Kyiv" />
                                         </picture>
+                                        <button class="add-destination" type="button">Add to planner</button>
                                     </div>
 
-                                    <div class="products__screen">
+                                    <div class="products__screen" data-name="Lviv" data-country="Ukraine" data-id="lviv">
                                         <picture>
                                             <source srcset="./assets/images/screen/m_screen2.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen2.jpg" width="167" height="376" alt="Mobile Product Screen" />
+                                            <img src="./assets/images/screen/m_screen2.jpg" width="167" height="376" alt="Lviv" />
                                         </picture>
+                                        <button class="add-destination" type="button">Add to planner</button>
                                     </div>
-                                    <div class="products__screen active">
+                                    <div class="products__screen active" data-name="Odesa" data-country="Ukraine" data-id="odesa">
                                         <picture>
                                             <source srcset="./assets/images/screen/m_screen.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen.jpg" width="230" height="500" alt="Mobile Product Screen" />
+                                            <img src="./assets/images/screen/m_screen.jpg" width="230" height="500" alt="Odesa" />
                                         </picture>
+                                        <button class="add-destination" type="button">Add to planner</button>
                                     </div>
                                 </div>
                             </div>
@@ -268,8 +271,7 @@
                     <div class="container products_step-one">
                         <div class="row">
                             <div class="col col-12">
-                                <p><span>Our mobile app products</span> <span>seamlessly integrate with the Internet of Things, utilising our proprietary technologies to deliver unparalleled
-                                    user experiences</span></p>
+                                <p><span>Discover stunning destinations</span> <span>add them to your trip and plan the perfect itinerary</span></p>
                             </div>
                         </div>
                     </div>
@@ -346,7 +348,7 @@
 
             <!--  CAREERS SECTION  -->  
 
-            <section id="careers" class="section" data-title="Careers">  
+            <section id="careers" class="section" data-title="Planner">  
                 <div class="section__wrapper-decor">
                     <div class="light">
                         <picture>
@@ -374,10 +376,10 @@
                                                     <source srcset="./assets/images/subtract.webp" type="image/webp">
                                                     <img src="./assets/images/subtract.png" width="auto" height="auto" alt="Logo minimal" />
                                                 </picture>
-                                                <h2>Join Toggle Apps</h2>
-                                                <p>Work with top talent from leading companies to create groundbreaking mobile solutions</p>
+                                                <h2>Trip Planner</h2>
+                                                <p>Plan and organize your itinerary in one place</p>
                                                 <span class="divinder"></span>
-                                                <a href=""><span>Explore careers</span></a>
+                                                <a href="#careers"><span>Open planner</span></a>
                                                 <span class="decor">
                                                     <span></span>
                                                 </span>
@@ -395,15 +397,21 @@
                                 <div class="careers__wrapper">
                                     <div class="email-click">
                                         <span>
-                                            <span id="email-text">
-                                                contact@toggle.apps
-                                            </span>
-                                            <span id="copy-button">
-                                                Copy
-                                            </span>
+                                            <span id="email-text">contact@toggle.apps</span>
+                                            <span id="copy-button">Copy</span>
                                         </span>
                                     </div>
-                                    <p>Any questions? Let’s talk</p>
+                                    <div class="planner">
+                                        <form id="planner-form">
+                                            <input id="planner-destination" type="text" placeholder="Destination" aria-label="Destination" />
+                                            <input id="planner-date" type="date" aria-label="Date" />
+                                            <button type="submit">Add</button>
+                                        </form>
+                                        <ul id="itinerary-list" aria-live="polite"></ul>
+                                        <div class="planner__actions">
+                                            <button id="clear-itinerary" type="button">Clear itinerary</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
