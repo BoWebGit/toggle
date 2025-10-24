@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Toggle App</title>
+        <title>Travelly — Путівник і Планувальник</title>
         
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,13 +31,13 @@
                         <div class="navbar">
                             <nav>
                                 <ul>
-                                    <li><a href="#home"data-offset="0">Home</a></li>
-                                    <li><a href="#about" data-offset="50">About</a></li>
-                                    <li><a href="#products" data-offset="150">Products</a></li>
-                                    <li><a href="#team" data-offset="140">Team</a></li>
+                                    <li><a href="#home" data-offset="0">Головна</a></li>
+                                    <li><a href="#about" data-offset="50">Про нас</a></li>
+                                    <li><a href="#products" data-offset="150">Напрямки</a></li>
+                                    <li><a href="#careers" data-offset="140">Планування</a></li>
                                 </ul>
                             </nav>
-                            <a class="header_btn" href=""><span>Join us</span></a>
+                            <a class="header_btn" href="#careers"><span>Зв'язатись</span></a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
             <span class="stars"></span>
             <span class="pattern"></span>
             <!--  HERO SECTION  -->
-            <section id="home" class="section" data-title="Home" >
+            <section id="home" class="section" data-title="Головна" >
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
@@ -57,9 +57,9 @@
                                         <source srcset="./assets/images/toggle_cosmic.webp" type="image/webp">
                                         <img src="./assets/images/toggle_cosmic.png" loading="lazy" alt="Logo Icons" />
                                     </picture>
-                                    <h1 data-text="Precision in Every App"><span>Precision <br>in Every App</span></h1>
-                                    <h3>Innovative Solutions, Seamless Experiences</h3>
-                                    <a href="" class="btn">
+                                    <h1 data-text="Відкривайте світ з Travelly"><span>Відкривайте <br>світ з Travelly</span></h1>
+                                    <h3>Знаходьте напрямки, плануйте маршрути, подорожуйте легко</h3>
+                                    <a href="#careers" class="btn">
                                         <span class="dtn__animation"><span></span></span>
                                         <span class="dtn__text">
                                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@
                                                 <rect x="10" width="3" height="3" fill="white"/>    
                                             </svg>
                                                 
-                                            Lets connect
+                                            Почати планування
                                         </span>
                                     </a>
                                 </div>
@@ -121,7 +121,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col col-12">
-                                    <p class="about__description-top">Toggle Apps develops innovative technologies and products</p>
+                                    <p class="about__description-top">Travelly допомагає відкривати світ та планувати мандрівки</p>
                                     <div class="about__stats">
                                         <div class="about__stats-cell">
                                             <div>
@@ -152,7 +152,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="about__description-bottom">Since our inception, our mobile apps have reached nearly half a million users globally</p>
+                                    <p class="about__description-bottom">Тисячі мандрівників уже планують подорожі разом з нами</p>
                                 </div>
                             </div>
                         </div>
@@ -160,14 +160,14 @@
                     <div class="container about__step-two">
                         <div class="row">
                             <div class="col col-12">
-                                <p>Our success is driven by a deep understanding of user needs and a passion for technological advancement...</p>
+                                <p>Ми поєднуємо зручність і натхнення, щоб кожна подорож була простою та яскравою...</p>
                             </div>
                         </div>
                     </div>
                     <div class="container about__step-three">
                         <div class="row">
                             <div class="col col-12">
-                                <p>...with the </br>commitment to...</p>
+                                <p>...та справжньою </br>пристрастю до досліджень...</p>
                                 <div class="about__slider">
                                     <span></span>
                                     <span></span>
@@ -222,7 +222,7 @@
 
             <!--  PRODUCTS SECTION  -->  
 
-            <section id="products" class="section" data-title="Products">  
+            <section id="products" class="section" data-title="Напрямки">  
                 <div class="section__wrapper-decor">
                     <picture class="sun_flare">
                         <source srcset="./assets/images/sun_flare.webp" type="image/webp">
@@ -268,8 +268,18 @@
                     <div class="container products_step-one">
                         <div class="row">
                             <div class="col col-12">
-                                <p><span>Our mobile app products</span> <span>seamlessly integrate with the Internet of Things, utilising our proprietary technologies to deliver unparalleled
-                                    user experiences</span></p>
+                                <p><span>Знаходьте найкращі напрямки</span> <span>обирайте міста та країни для вашої наступної подорожі</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Destinations search UI -->
+                    <div class="container products_search">
+                        <div class="row">
+                            <div class="col col-12">
+                                <form id="destinations-form" autocomplete="off" style="margin-top:32px">
+                                    <input id="destination-search" type="search" placeholder="Пошук напрямків (місто, країна)" style="width:100%;max-width:640px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff" />
+                                </form>
+                                <div id="destinations-list" aria-live="polite" style="margin-top:16px"></div>
                             </div>
                         </div>
                     </div>
@@ -278,7 +288,7 @@
 
             <!--  TEAM SECTION  -->  
 
-            <section id="team" class="section" data-title="Teams">  
+            <section id="team" class="section" data-title="Спільнота">  
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
@@ -335,9 +345,9 @@
                                         </span>
                                         
                                     </div>
-                                    <p>The Heart of Toggle Apps</p>
+                                    <p>Наша спільнота мандрівників</p>
                                </div>
-                                <p>At Toggle Apps, we go to great lengths to assemble a team of exceptional talent, ensuring that we only bring in the best minds in the industry</p>
+                                <p>У Travelly ми об’єднуємо людей, яких надихають подорожі, аби ділитися досвідом і порадами</p>
                             </div>
                         </div>
                     </div>
@@ -346,7 +356,7 @@
 
             <!--  CAREERS SECTION  -->  
 
-            <section id="careers" class="section" data-title="Careers">  
+            <section id="careers" class="section" data-title="Планування">  
                 <div class="section__wrapper-decor">
                     <div class="light">
                         <picture>
@@ -374,10 +384,10 @@
                                                     <source srcset="./assets/images/subtract.webp" type="image/webp">
                                                     <img src="./assets/images/subtract.png" width="auto" height="auto" alt="Logo minimal" />
                                                 </picture>
-                                                <h2>Join Toggle Apps</h2>
-                                                <p>Work with top talent from leading companies to create groundbreaking mobile solutions</p>
+                                                <h2>Подорожуйте з Travelly</h2>
+                                                <p>Плануйте маршрути та відкривайте нові місця в один клік</p>
                                                 <span class="divinder"></span>
-                                                <a href=""><span>Explore careers</span></a>
+                                                <a href="#careers"><span>Дізнатись більше</span></a>
                                                 <span class="decor">
                                                     <span></span>
                                                 </span>
@@ -396,14 +406,33 @@
                                     <div class="email-click">
                                         <span>
                                             <span id="email-text">
-                                                contact@toggle.apps
+                                                contact@travelly.app
                                             </span>
                                             <span id="copy-button">
-                                                Copy
+                                                Копіювати
                                             </span>
                                         </span>
                                     </div>
-                                    <p>Any questions? Let’s talk</p>
+                                    <p>Є питання? Давайте поговоримо</p>
+                                    <!-- Trip Planner -->
+                                    <div class="trip-planner" style="margin-top:24px">
+                                        <form id="trip-planner-form" autocomplete="off">
+                                            <div style="display:grid;gap:12px;grid-template-columns:repeat(1, minmax(0, 1fr));max-width:860px">
+                                                <input id="from-city" name="from" placeholder="Місто відправлення" required style="padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff" />
+                                                <input id="to-city" name="to" placeholder="Пункт призначення" required style="padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff" />
+                                                <div style="display:grid;gap:12px;grid-template-columns:repeat(2, minmax(0, 1fr))">
+                                                    <input id="depart-date" name="depart" type="date" required style="padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff" />
+                                                    <input id="return-date" name="return" type="date" required style="padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff" />
+                                                </div>
+                                                <div style="display:grid;gap:12px;grid-template-columns:repeat(2, minmax(0, 1fr))">
+                                                    <input id="travelers" name="travelers" type="number" min="1" value="1" placeholder="К-сть мандрівників" required style="padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff" />
+                                                    <input id="budget" name="budget" type="number" min="0" step="50" placeholder="Бюджет, $" style="padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.05);color:#fff" />
+                                                </div>
+                                                <button type="submit" class="btn" style="width:max-content;padding:10px 16px"><span class="dtn__text">Спланувати</span></button>
+                                            </div>
+                                        </form>
+                                        <div id="trip-summary" style="margin-top:16px"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -418,25 +447,25 @@
                     <div class="row">
                         <div class="col col-12">
                             <div>
-                                <h2 class="footer__heading"><span>Let’s make something</span> <span>amazing together.</span></h2>
+                                <h2 class="footer__heading"><span>Відкриємо світ</span> <span>разом.</span></h2>
                                 <ul class="footer__nav-top">
                                     <li>
-                                        <a href="#" target="_blank">LinkedIn</a>
+                                        <a href="#" target="&_blank">LinkedIn</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">Careers </a>
+                                        <a href="#" target="&_blank">Careers </a>
                                     </li>
                                 </ul>
                                 <span class="footer__divider"></span>
                                 <div class="footer__nav-bottom">
-                                    <a href="#" target="_blank">Privacy policy</a>
-                                    <a href="#" target="_blank">Terms of Service</a>
+                                    <a href="#" target="&_blank">Privacy policy</a>
+                                    <a href="#" target="&_blank">Terms of Service</a>
                                     <picture class="foter__logo">
                                         <img src="./assets/images/logo_footer.svg" width="57" height="42" alt="Site Logo" />
                                     </picture>
                                 </div>
                                 <p>All Rights Reserved</p>
-                                <p>©Toggle Apps 2024</p>
+                                <p>©Travelly 2025</p>
                             </div>
                         </div>
                     </div>
