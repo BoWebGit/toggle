@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Toggle App</title>
+        <title>Travel Explorer - Відкрий світ разом з нами</title>
+        <meta name="description" content="Сучасний веб-застосунок для подорожей. Знайди ідеальний тур, забронюй готель та створи незабутні спогади.">
         
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     </head>
     <body data-scroll-container>
         <header class="site-header">
@@ -16,66 +16,88 @@
                 <div class="row">
                     <div class="col col-4 col-md-0">
                         <span class="toggle-menu">
-                            Menu 
+                            Меню 
                         </span>
                     </div>  
                     <div class="col col-4 col-md-3 col-lg-2">
                         <div class="logo">
                             <picture>
                                 <source media="(max-width: 500px)" srcset="./assets/images/logo_header_m.svg" />
-                                <img src="./assets/images/logo_header_d.svg" alt="Logo Sites" />
+                                <img src="./assets/images/logo_header_d.svg" alt="Travel Explorer" />
                             </picture>
                         </div>
                     </div>
-                    <div class="col col-4 col-md-9 col-lg-8  col-xl-7 col-xxl-offset-1 col-xxl-6">
+                    <div class="col col-4 col-md-9 col-lg-8 col-xl-7 col-xxl-offset-1 col-xxl-6">
                         <div class="navbar">
                             <nav>
                                 <ul>
-                                    <li><a href="#home"data-offset="0">Home</a></li>
-                                    <li><a href="#about" data-offset="50">About</a></li>
-                                    <li><a href="#products" data-offset="150">Products</a></li>
-                                    <li><a href="#team" data-offset="140">Team</a></li>
+                                    <li><a href="#home" data-offset="0">Головна</a></li>
+                                    <li><a href="#destinations" data-offset="50">Напрямки</a></li>
+                                    <li><a href="#tours" data-offset="150">Тури</a></li>
+                                    <li><a href="#about" data-offset="140">Про нас</a></li>
+                                    <li><a href="#contact" data-offset="100">Контакти</a></li>
                                 </ul>
                             </nav>
-                            <a class="header_btn" href=""><span>Join us</span></a>
+                            <a class="header_btn" href="#booking"><span>Забронювати</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+        
         <main>
             <span class="stars"></span>
             <span class="pattern"></span>
+            
             <!--  HERO SECTION  -->
-            <section id="home" class="section" data-title="Home" >
+            <section id="home" class="section hero-section" data-title="Головна">
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
                             <div class="col col-12">
-                                <div class="home__block">
-                                    <picture>
-                                        <source srcset="./assets/images/toggle_cosmic.webp" type="image/webp">
-                                        <img src="./assets/images/toggle_cosmic.png" loading="lazy" alt="Logo Icons" />
+                                <div class="hero__block">
+                                    <picture class="hero__icon">
+                                        <source srcset="./assets/images/travel-icon.webp" type="image/webp">
+                                        <img src="./assets/images/travel-icon.png" loading="lazy" alt="Travel Explorer Icon" />
                                     </picture>
-                                    <h1 data-text="Precision in Every App"><span>Precision <br>in Every App</span></h1>
-                                    <h3>Innovative Solutions, Seamless Experiences</h3>
-                                    <a href="" class="btn">
-                                        <span class="dtn__animation"><span></span></span>
-                                        <span class="dtn__text">
+                                    <h1 data-text="Відкрий світ разом з нами">
+                                        <span>Відкрий світ <br>разом з нами</span>
+                                    </h1>
+                                    <h3>Незабутні подорожі, ідеальний сервіс</h3>
+                                    <div class="hero__search">
+                                        <div class="search-form">
+                                            <input type="text" placeholder="Куди хочете поїхати?" class="destination-input">
+                                            <input type="date" class="date-input">
+                                            <select class="travelers-select">
+                                                <option value="1">1 мандрівник</option>
+                                                <option value="2">2 мандрівники</option>
+                                                <option value="3">3 мандрівники</option>
+                                                <option value="4">4+ мандрівники</option>
+                                            </select>
+                                            <button class="search-btn">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M19 19L14.65 14.65M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" stroke="white" stroke-width="2"/>
+                                                </svg>
+                                                Пошук
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a href="#destinations" class="btn hero-btn">
+                                        <span class="btn__animation"><span></span></span>
+                                        <span class="btn__text">
                                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 1H12M12 1V12M12 1L1 12" stroke="white" stroke-width="2"/>
                                                 <rect x="10" width="3" height="3" fill="white"/>    
                                             </svg>
-                                                
-                                            Lets connect
+                                            Почати подорож
                                         </span>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="home__scroll-down">
-                        <span><span>scroll down...</span></span>
+                    <div class="hero__scroll-down">
+                        <span><span>прокрутіть вниз...</span></span>
                         <span>
                             <svg width="13" height="19" viewBox="0 0 13 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M11 6V13C11 15.1416 9.50399 16.9338 7.5 17.3885V14C7.5 13.4477 7.05228 13 6.5 13C5.94772 13 5.5 13.4477 5.5 14V17.3885C3.49601 16.9338 2 15.1416 2 13V6C2 3.51472 4.01472 1.5 6.5 1.5C8.98528 1.5 11 3.51472 11 6ZM6.5 19C3.18629 19 0.5 16.3137 0.5 13V6C0.5 2.68629 3.18629 0 6.5 0C9.81371 0 12.5 2.68629 12.5 6V13C12.5 16.3137 9.81371 19 6.5 19Z" fill="url(#paint0_linear_435_2398)"/>
@@ -91,127 +113,81 @@
                 </div>
             </section>
 
-            <!--  ABOUT SECTION  -->
-
-            <section id="about" class="section" data-title="About" >  
+            <!--  DESTINATIONS SECTION  -->
+            <section id="destinations" class="section destinations-section" data-title="Напрямки">  
                 <div class="section__wrapper-decor">
                     <picture class="bg-step-one">
-                        <source srcset="./assets/images/bg_about.webp" type="image/webp">
-                        <img src="./assets/images/bg_about.jpg" width="1440" height="900" alt="Decor Swirl" />
+                        <source srcset="./assets/images/bg_destinations.webp" type="image/webp">
+                        <img src="./assets/images/bg_destinations.jpg" width="1440" height="900" alt="Destinations Background" />
                     </picture>
-                    <picture class="about__swirl">
-                        <source srcset="./assets/images/swirl.webp" type="image/webp">
-                        <img src="./assets/images/swirl.jpg" width="2880" height="1800" alt="Decor Swirl" />
-                    </picture>
-                    <picture class="about__sphere">
-                        <source srcset="./assets/images/sphere.webp" type="image/webp">
-                        <img src="./assets/images/sphere.png" width="640" height="640" alt="Decor Sphere" />
-                    </picture>
-                    <div class="about__eclipse">
+                    <div class="destinations__eclipse">
                         <picture>
                             <img src="./assets/images/eclipse.svg" width="420" height="420" alt="Decor Eclipse" />
                         </picture>
-                        <span>
-
-                        </span>
                     </div>
                 </div>
                 <div class="section__wrapper">
-                    <div class="about__step-one">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col col-12">
-                                    <p class="about__description-top">Toggle Apps develops innovative technologies and products</p>
-                                    <div class="about__stats">
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>500k+</span></h3>
-                                                <h5>active users</h5>
-                                            </div>
-                                        </div>
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>3M</span></h3>
-                                                <h5>downloads</h5>
-                                            </div>
-                                        </div>
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>4.8</span></h3>
-                                                <h5>average rating</h5>
-                                            </div>
-                                        </div>
-                                        <div class="about__stats-cell">
-                                            <div>
-                                                <span></span>
-                                                <h3><span>1M+</span></h3>
-                                                <h5>connected devices</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="about__description-bottom">Since our inception, our mobile apps have reached nearly half a million users globally</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container about__step-two">
+                    <div class="container">
                         <div class="row">
                             <div class="col col-12">
-                                <p>Our success is driven by a deep understanding of user needs and a passion for technological advancement...</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container about__step-three">
-                        <div class="row">
-                            <div class="col col-12">
-                                <p>...with the </br>commitment to...</p>
-                                <div class="about__slider">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <div class="about__slider-wrapper">
-                                        <div class="about__slider-item left">
-                                            <div>
-                                                <div>
-                                                    <picture>
-                                                        <source srcset="./assets/images/about-icon2.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon2.png" width="133" height="132" alt="About Icon" />
-                                                    </picture>
-                                                    <h3>Highest quality </br>standards</h3>
-                                                </div>
-                                            </div>
+                                <h2 class="section-title">Популярні напрямки</h2>
+                                <p class="section-description">Відкрийте для себе найкрасивіші куточки нашої планети</p>
+                                
+                                <div class="destinations__grid">
+                                    <div class="destination-card">
+                                        <div class="destination-image">
+                                            <picture>
+                                                <source srcset="./assets/images/destinations/paris.webp" type="image/webp">
+                                                <img src="./assets/images/destinations/paris.jpg" alt="Париж, Франція" />
+                                            </picture>
                                         </div>
-
-                                        <div class="about__slider-item right">
-                                            <div>
-                                                <div>
-                                                    <picture>
-                                                        <source srcset="./assets/images/about-icon3.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon3.png" width="133" height="132" alt="About Icon" />
-                                                    </picture>
-                                                    <h3>Pushing the </br>boundaries</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="about__slider-item active">
-                                            <div>
-                                                <div>
-                                                    <picture>
-                                                        <source srcset="./assets/images/about-icon.webp" type="image/webp">
-                                                        <img src="./assets/images/about-icon.png" width="133" height="132" alt="About Icon" />
-                                                    </picture>
-                                                    <h3>Excellence </br>of execution</h3>
-                                                </div>
-                                            </div>
+                                        <div class="destination-info">
+                                            <h3>Париж</h3>
+                                            <p>Франція</p>
+                                            <span class="price">від €299</span>
                                         </div>
                                     </div>
-                                    <div class="about__slider-progress">
-                                        <span></span>
+                                    
+                                    <div class="destination-card">
+                                        <div class="destination-image">
+                                            <picture>
+                                                <source srcset="./assets/images/destinations/tokyo.webp" type="image/webp">
+                                                <img src="./assets/images/destinations/tokyo.jpg" alt="Токіо, Японія" />
+                                            </picture>
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Токіо</h3>
+                                            <p>Японія</p>
+                                            <span class="price">від €599</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="destination-card">
+                                        <div class="destination-image">
+                                            <picture>
+                                                <source srcset="./assets/images/destinations/bali.webp" type="image/webp">
+                                                <img src="./assets/images/destinations/bali.jpg" alt="Балі, Індонезія" />
+                                            </picture>
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Балі</h3>
+                                            <p>Індонезія</p>
+                                            <span class="price">від €399</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="destination-card">
+                                        <div class="destination-image">
+                                            <picture>
+                                                <source srcset="./assets/images/destinations/santorini.webp" type="image/webp">
+                                                <img src="./assets/images/destinations/santorini.jpg" alt="Санторіні, Греція" />
+                                            </picture>
+                                        </div>
+                                        <div class="destination-info">
+                                            <h3>Санторіні</h3>
+                                            <p>Греція</p>
+                                            <span class="price">від €449</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -220,133 +196,142 @@
                 </div>
             </section>
 
-            <!--  PRODUCTS SECTION  -->  
-
-            <section id="products" class="section" data-title="Products">  
+            <!--  TOURS SECTION  -->  
+            <section id="tours" class="section tours-section" data-title="Тури">  
                 <div class="section__wrapper-decor">
                     <picture class="sun_flare">
                         <source srcset="./assets/images/sun_flare.webp" type="image/webp">
                         <img src="./assets/images/sun_flare.jpg" width="1016" height="422" alt="Sun Flare Decor" />
                     </picture>
                 </div>
-                <div class="section__wrapper-decor screens">
-                    <div class="container products_step-two">
+                
+                <div class="section__wrapper">
+                    <div class="container">
                         <div class="row">
                             <div class="col col-12">
-                                <div class="products__screens">
-                                    <div class="products__screen">
-                                        <picture>
-                                            <source srcset="./assets/images/screen/m_screen3.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen3.jpg" width="167" height="376" alt="Mobile Product Screen" />
-                                        </picture>
+                                <h2 class="section-title">Спеціальні пропозиції</h2>
+                                <div class="tours__slider">
+                                    <div class="tour-card active">
+                                        <div class="tour-image">
+                                            <picture>
+                                                <source srcset="./assets/images/tours/europe-tour.webp" type="image/webp">
+                                                <img src="./assets/images/tours/europe-tour.jpg" alt="Європейський тур" />
+                                            </picture>
+                                        </div>
+                                        <div class="tour-content">
+                                            <h3>Європейський тур</h3>
+                                            <p>7 країн за 14 днів</p>
+                                            <div class="tour-features">
+                                                <span>✈️ Авіаперельоти</span>
+                                                <span>🏨 Готелі 4*</span>
+                                                <span>🍽️ Сніданки</span>
+                                                <span>🚌 Трансфери</span>
+                                            </div>
+                                            <div class="tour-price">
+                                                <span class="old-price">€1299</span>
+                                                <span class="new-price">€999</span>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <div class="products__screen">
-                                        <picture>
-                                            <source srcset="./assets/images/screen/m_screen2.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen2.jpg" width="167" height="376" alt="Mobile Product Screen" />
-                                        </picture>
-                                    </div>
-                                    <div class="products__screen active">
-                                        <picture>
-                                            <source srcset="./assets/images/screen/m_screen.webp" type="image/webp">
-                                            <img src="./assets/images/screen/m_screen.jpg" width="230" height="500" alt="Mobile Product Screen" />
-                                        </picture>
+                                    
+                                    <div class="tour-card">
+                                        <div class="tour-image">
+                                            <picture>
+                                                <source srcset="./assets/images/tours/asia-tour.webp" type="image/webp">
+                                                <img src="./assets/images/tours/asia-tour.jpg" alt="Азійський тур" />
+                                            </picture>
+                                        </div>
+                                        <div class="tour-content">
+                                            <h3>Азійський тур</h3>
+                                            <p>Таїланд + В'єтнам за 12 днів</p>
+                                            <div class="tour-features">
+                                                <span>✈️ Авіаперельоти</span>
+                                                <span>🏨 Готелі 5*</span>
+                                                <span>🍽️ Повний пансіон</span>
+                                                <span>🏖️ Пляжний відпочинок</span>
+                                            </div>
+                                            <div class="tour-price">
+                                                <span class="old-price">€1599</span>
+                                                <span class="new-price">€1199</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="section__wrapper-decor">
-                    <picture class="products__galaxy">
-                        <source srcset="./assets/images/galaxy.webp" type="image/webp">
-                        <img src="./assets/images/galaxy.png" width="2108" height="914" alt="Galaxy Decor" />
-                    </picture>
-                </div>
-                <div class="section__wrapper">
-                    <div class="container products_step-one">
-                        <div class="row">
-                            <div class="col col-12">
-                                <p><span>Our mobile app products</span> <span>seamlessly integrate with the Internet of Things, utilising our proprietary technologies to deliver unparalleled
-                                    user experiences</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </section>
 
-            <!--  TEAM SECTION  -->  
-
-            <section id="team" class="section" data-title="Teams">  
+            <!--  ABOUT SECTION  -->  
+            <section id="about" class="section about-section" data-title="Про нас">  
                 <div class="section__wrapper">
                     <div class="container">
                         <div class="row">
                             <div class="col col-12">
-                               <div class="team__wrapper">
-                                    <div class="items-circle">
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji1.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji1.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji2.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji2.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji3.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji3.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji4.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji4.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji5.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji5.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji6.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji6.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji7.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji7.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        <span>
-                                            <picture>
-                                                <source srcset="./assets/images/team/memoji8.webp" type="image/webp">
-                                                <img src="./assets/images/team/memoji8.png" width="60" height="60" alt="Team Emodji" />
-                                            </picture>
-                                        </span>
-                                        
+                                <div class="about__content">
+                                    <h2 class="section-title">Чому обирають Travel Explorer?</h2>
+                                    
+                                    <div class="about__stats">
+                                        <div class="stat-item">
+                                            <h3>10K+</h3>
+                                            <p>Задоволених клієнтів</p>
+                                        </div>
+                                        <div class="stat-item">
+                                            <h3>50+</h3>
+                                            <p>Країн світу</p>
+                                        </div>
+                                        <div class="stat-item">
+                                            <h3>24/7</h3>
+                                            <p>Підтримка</p>
+                                        </div>
+                                        <div class="stat-item">
+                                            <h3>15</h3>
+                                            <p>Років досвіду</p>
+                                        </div>
                                     </div>
-                                    <p>The Heart of Toggle Apps</p>
-                               </div>
-                                <p>At Toggle Apps, we go to great lengths to assemble a team of exceptional talent, ensuring that we only bring in the best minds in the industry</p>
+                                    
+                                    <div class="about__features">
+                                        <div class="feature-item">
+                                            <div class="feature-icon">
+                                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                                    <path d="M20 5L25 15H35L27.5 22.5L30 32.5L20 27.5L10 32.5L12.5 22.5L5 15H15L20 5Z" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <h4>Найкращі ціни</h4>
+                                            <p>Гарантуємо найвигідніші пропозиції на ринку</p>
+                                        </div>
+                                        
+                                        <div class="feature-item">
+                                            <div class="feature-icon">
+                                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                                    <path d="M20 37C29.3888 37 37 29.3888 37 20C37 10.6112 29.3888 3 20 3C10.6112 3 3 10.6112 3 20C3 29.3888 10.6112 37 20 37Z" stroke="currentColor" stroke-width="2"/>
+                                                    <path d="M20 13V20L25 25" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <h4>Швидке бронювання</h4>
+                                            <p>Забронюйте тур всього за 3 хвилини</p>
+                                        </div>
+                                        
+                                        <div class="feature-item">
+                                            <div class="feature-icon">
+                                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                                    <path d="M35 15L20 25L5 15M5 15V30C5 31.1046 5.89543 32 7 32H33C34.1046 32 35 31.1046 35 30V15M5 15L20 5L35 15" stroke="currentColor" stroke-width="2"/>
+                                                </svg>
+                                            </div>
+                                            <h4>Персональний підхід</h4>
+                                            <p>Індивідуальні маршрути для кожного клієнта</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!--  CAREERS SECTION  -->  
-
-            <section id="careers" class="section" data-title="Careers">  
+            <!--  CONTACT SECTION  -->  
+            <section id="contact" class="section contact-section" data-title="Контакти">  
                 <div class="section__wrapper-decor">
                     <div class="light">
                         <picture>
@@ -354,33 +339,57 @@
                             <img src="./assets/images/ray.png" width="882" height="1323" alt="" />
                         </picture>
                     </div>
-                    <picture class="lines">
-                        <img src="./assets/images/lines.svg" width="133" height="571" alt="" />
-                    </picture>
                 </div> 
                 <div class="section__wrapper">
-                    <div class="container careers__step-one">
+                    <div class="container">
                         <div class="row">
                             <div class="col col-12">
-                                <div class="careers__wrapper">
-                                    <div>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <div>
-                                            <div>
-                                                <picture class="products__screen">
-                                                    <source srcset="./assets/images/subtract.webp" type="image/webp">
-                                                    <img src="./assets/images/subtract.png" width="auto" height="auto" alt="Logo minimal" />
-                                                </picture>
-                                                <h2>Join Toggle Apps</h2>
-                                                <p>Work with top talent from leading companies to create groundbreaking mobile solutions</p>
-                                                <span class="divinder"></span>
-                                                <a href=""><span>Explore careers</span></a>
-                                                <span class="decor">
-                                                    <span></span>
-                                                </span>
+                                <div class="contact__content">
+                                    <h2 class="section-title">Зв'яжіться з нами</h2>
+                                    
+                                    <div class="contact__form-wrapper">
+                                        <form class="contact-form">
+                                            <div class="form-group">
+                                                <input type="text" name="name" placeholder="Ваше ім'я" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email" placeholder="Email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="tel" name="phone" placeholder="Телефон">
+                                            </div>
+                                            <div class="form-group">
+                                                <select name="tour-type">
+                                                    <option value="">Оберіть тип туру</option>
+                                                    <option value="beach">Пляжний відпочинок</option>
+                                                    <option value="cultural">Культурний тур</option>
+                                                    <option value="adventure">Пригодницький тур</option>
+                                                    <option value="business">Діловий тур</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea name="message" placeholder="Повідомлення" rows="4"></textarea>
+                                            </div>
+                                            <button type="submit" class="submit-btn">
+                                                <span>Відправити заявку</span>
+                                            </button>
+                                        </form>
+                                        
+                                        <div class="contact__info">
+                                            <div class="contact-item">
+                                                <h4>Телефон</h4>
+                                                <p>+38 (044) 123-45-67</p>
+                                            </div>
+                                            <div class="contact-item">
+                                                <h4>Email</h4>
+                                                <div class="email-click">
+                                                    <span id="email-text">info@travelexplorer.ua</span>
+                                                    <button id="copy-button">Копіювати</button>
+                                                </div>
+                                            </div>
+                                            <div class="contact-item">
+                                                <h4>Адреса</h4>
+                                                <p>вул. Хрещатик, 1<br>Київ, Україна</p>
                                             </div>
                                         </div>
                                     </div>
@@ -388,26 +397,6 @@
                             </div>
                         </div>
                     </div>   
-                    
-                    <div class="container careers__step-two">
-                        <div class="row">
-                            <div class="col col-12 ">
-                                <div class="careers__wrapper">
-                                    <div class="email-click">
-                                        <span>
-                                            <span id="email-text">
-                                                contact@toggle.apps
-                                            </span>
-                                            <span id="copy-button">
-                                                Copy
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <p>Any questions? Let’s talk</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
                 </div>
             </section>
             
@@ -418,25 +407,25 @@
                     <div class="row">
                         <div class="col col-12">
                             <div>
-                                <h2 class="footer__heading"><span>Let’s make something</span> <span>amazing together.</span></h2>
+                                <h2 class="footer__heading">
+                                    <span>Створимо незабутню</span> 
+                                    <span>подорож разом.</span>
+                                </h2>
                                 <ul class="footer__nav-top">
-                                    <li>
-                                        <a href="#" target="_blank">LinkedIn</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" target="_blank">Careers </a>
-                                    </li>
+                                    <li><a href="#" target="_blank">Facebook</a></li>
+                                    <li><a href="#" target="_blank">Instagram</a></li>
+                                    <li><a href="#" target="_blank">Telegram</a></li>
                                 </ul>
                                 <span class="footer__divider"></span>
                                 <div class="footer__nav-bottom">
-                                    <a href="#" target="_blank">Privacy policy</a>
-                                    <a href="#" target="_blank">Terms of Service</a>
-                                    <picture class="foter__logo">
-                                        <img src="./assets/images/logo_footer.svg" width="57" height="42" alt="Site Logo" />
+                                    <a href="#" target="_blank">Політика конфіденційності</a>
+                                    <a href="#" target="_blank">Умови користування</a>
+                                    <picture class="footer__logo">
+                                        <img src="./assets/images/logo_footer.svg" width="57" height="42" alt="Travel Explorer Logo" />
                                     </picture>
                                 </div>
-                                <p>All Rights Reserved</p>
-                                <p>©Toggle Apps 2024</p>
+                                <p>Всі права захищені</p>
+                                <p>©Travel Explorer 2024</p>
                             </div>
                         </div>
                     </div>

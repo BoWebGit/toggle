@@ -7,8 +7,11 @@
 @import './header';
 @import './footer';
 
-@import './home/home';
-@import './home/about';
-@import './home/products';
-@import './home/team';
-@import './home/careers';
+// Travel-specific styles
+@import './travel/hero';
+@import './travel/destinations';
+@import './travel/tours';
+@import './travel/about';
+@import './travel/contact';
+@import './travel/booking';
+@import './travel/components';

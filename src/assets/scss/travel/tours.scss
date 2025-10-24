@@ -1,0 +1,503 @@
+// Tours section styles
+.tours-section {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  .section__wrapper-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+
+    .sun_flare {
+      position: absolute;
+      top: 20%;
+      left: -10%;
+      opacity: 0.3;
+      
+      img {
+        width: 800px;
+        height: auto;
+      }
+    }
+  }
+
+  .section__wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .tours__slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .tour-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0.7;
+    transform: scale(0.95);
+
+    &.active {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+      border-color: rgba(251, 191, 36, 0.3);
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .tour-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.5) 100%);
+      }
+    }
+
+    .tour-content {
+      padding: 2rem;
+
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+
+      > p {
+        color: rgba(255,255,255,0.8);
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .tour-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+
+        span {
+          background: rgba(255,255,255,0.1);
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          border: 1px solid rgba(255,255,255,0.2);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+
+      .tour-price {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        .old-price {
+          font-size: 1.2rem;
+          color: rgba(255,255,255,0.5);
+          text-decoration: line-through;
+        }
+
+        .new-price {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #fbbf24;
+        }
+      }
+
+      .book-tour-btn {
+        background: linear-gradient(45deg, #fbbf24, #f59e0b);
+        color: #1a202c;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        font-size: 1.1rem;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 40px rgba(251, 191, 36, 0.4);
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+// Tour navigation controls
+.tour-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+
+  .tour-prev, .tour-next {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.1);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .tour-indicators {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: #fbbf24;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// Booking modal for tours
+.booking-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .modal-content {
+    position: relative;
+    background: white;
+    border-radius: 25px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(0,0,0,0.1);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0,0,0,0.2);
+        transform: scale(1.1);
+      }
+    }
+
+    .booking-content {
+      padding: 3rem;
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #1a202c;
+        text-align: center;
+      }
+
+      .tour-summary {
+        background: #f8fafc;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #1a202c;
+          margin-bottom: 0.5rem;
+        }
+
+        > p {
+          color: #64748b;
+          margin-bottom: 1rem;
+        }
+
+        .tour-details {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-bottom: 1rem;
+
+          span {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #4a5568;
+          }
+        }
+
+        .price-info {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .old-price {
+            color: #9ca3af;
+            text-decoration: line-through;
+          }
+
+          .current-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+          }
+        }
+      }
+
+      .booking-form {
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+          margin-bottom: 1rem;
+
+          @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .form-group {
+          margin-bottom: 1rem;
+
+          label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+          }
+
+          input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+
+            &:focus {
+              outline: none;
+              border-color: #667eea;
+              box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            }
+          }
+
+          textarea {
+            resize: vertical;
+            min-height: 100px;
+          }
+        }
+
+        .submit-booking-btn {
+          background: linear-gradient(45deg, #667eea, #764ba2);
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 50px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          width: 100%;
+          font-size: 1.1rem;
+          margin-top: 1rem;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Booking success state
+.booking-success {
+  text-align: center;
+  padding: 3rem 2rem;
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #10b981, #059669);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .close-success-btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+  }
+}
+
+// Unavailable message
+.unavailable-message {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: #ef4444;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+  z-index: 9999;
+  max-width: 300px;
+
+  .message-content {
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .close-message-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255,255,255,0.3);
+      }
+    }
+  }
+}
